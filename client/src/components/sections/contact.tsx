@@ -59,8 +59,11 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-oxford-blue">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-gradient-to-br from-oxford-blue via-oxford-blue/95 to-near-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-bronze/15 via-transparent to-champagne/10"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,134,88,0.2),transparent_80%)]"></div>
+      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-oxford-blue/50 to-transparent"></div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={ref}
           className={`text-center mb-16 fade-in ${isIntersecting ? "visible" : ""}`}
@@ -71,7 +74,7 @@ export default function ContactSection() {
 
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="bg-ivory p-12 shadow-2xl border border-champagne/20"
+          className="bg-gradient-to-br from-ivory via-background to-ivory/95 p-12 shadow-2xl border border-champagne/30 backdrop-blur-lg"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
