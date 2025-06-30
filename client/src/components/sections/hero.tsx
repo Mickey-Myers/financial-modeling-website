@@ -25,29 +25,26 @@ export default function HeroSection() {
             ref={ref}
             className={`fade-in ${isIntersecting ? "visible" : ""}`}
           >
-            <h1 className="text-6xl md:text-7xl xl:text-8xl font-display font-semibold text-near-black leading-relaxed mb-12 tracking-tight">
-              Institutional Financial <span className="text-bronze italic">Models</span>
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-near-black leading-tight mb-8 tracking-tight">
+              Get a Financial Model <span className="text-bronze italic">That Wins Deals</span>
             </h1>
-            <div className="mb-12">
-              <p className="text-lg text-bronze font-medium tracking-wide uppercase mb-4">
-                Built by bankers. Trusted by funds.
-              </p>
-              <p className="text-xl text-muted-text mb-8 leading-loose font-body max-w-lg">
-                Institutional-grade financial models for PE/VC-backed companies, real estate developers, and family offices. The caliber of analysis you expect from Moelis or Centerview.
+            <div className="mb-10">
+              <p className="text-xl text-muted-text mb-8 leading-relaxed font-body max-w-2xl">
+                Custom-built Excel models for founders, investors, and developers who need clarity, speed, and results.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-8">
+            <div className="flex flex-col sm:flex-row gap-6">
               <button 
                 onClick={scrollToContact}
-                className="bg-oxford-blue text-white px-14 py-6 text-lg font-medium hover:bg-bronze transition-all duration-500 text-center uppercase tracking-wide shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
+                className="bg-oxford-blue text-white px-12 py-5 text-lg font-medium hover:bg-bronze transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
               >
-                Start a Conversation
+                Book an Intro Call
               </button>
               <button 
                 onClick={scrollToServices}
-                className="border-2 border-oxford-blue text-oxford-blue px-14 py-6 text-lg font-medium hover:bg-oxford-blue hover:text-white transition-all duration-500 text-center uppercase tracking-wide hover:translate-y-[-2px]"
+                className="border-2 border-oxford-blue/30 text-oxford-blue px-12 py-5 text-lg font-medium hover:bg-oxford-blue/5 transition-all duration-300 text-center"
               >
-                Our Approach
+                Explore Services
               </button>
             </div>
           </div>
