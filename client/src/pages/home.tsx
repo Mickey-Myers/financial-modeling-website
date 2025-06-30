@@ -26,12 +26,14 @@ export default function Home() {
       <ContactSection />
       
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-near-black text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4">FinModel Pro</h3>
-            <p className="text-gray-400 mb-6">Professional Financial Modeling Consulting</p>
-            <p className="text-sm text-gray-500">© 2024 FinModel Pro. All rights reserved.</p>
+            <h3 className="text-2xl font-display font-medium mb-4 tracking-tight">Financial Modeling Partners</h3>
+            <p className="text-champagne mb-8 font-body">Institutional Financial Advisory</p>
+            <div className="border-t border-champagne/20 pt-8">
+              <p className="text-sm text-champagne/70 uppercase tracking-wide">© 2025 Financial Modeling Partners. All rights reserved.</p>
+            </div>
           </div>
         </div>
       </footer>

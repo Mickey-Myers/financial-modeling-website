@@ -59,90 +59,90 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-navy-800">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-oxford-blue">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={ref}
-          className={`text-center mb-12 fade-in ${isIntersecting ? "visible" : ""}`}
+          className={`text-center mb-16 fade-in ${isIntersecting ? "visible" : ""}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start Your Project</h2>
-          <p className="text-xl text-blue-100">Ready to get started? Let's build your financial model.</p>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Let's Build Something Institutional</h2>
+          <p className="text-xl text-champagne font-body">Ready to elevate your financial analysis? We're here to help.</p>
         </div>
 
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="bg-white rounded-2xl p-8 shadow-2xl"
+          className="bg-ivory p-12 shadow-2xl border border-champagne/20"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <Label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-2">
+              <Label htmlFor="fullName" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
                 Full Name *
               </Label>
               <Input
                 id="fullName"
                 type="text"
                 {...form.register("fullName")}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-800 focus:border-transparent"
+                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
                 disabled={isSubmitting}
               />
               {form.formState.errors.fullName && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.fullName.message}</p>
+                <p className="text-red-500 text-sm mt-2">{form.formState.errors.fullName.message}</p>
               )}
             </div>
             <div>
-              <Label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+              <Label htmlFor="company" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
                 Company
               </Label>
               <Input
                 id="company"
                 type="text"
                 {...form.register("company")}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-800 focus:border-transparent"
+                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
                 disabled={isSubmitting}
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <Label htmlFor="email" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
                 Email *
               </Label>
               <Input
                 id="email"
                 type="email"
                 {...form.register("email")}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-800 focus:border-transparent"
+                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
                 disabled={isSubmitting}
               />
               {form.formState.errors.email && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.email.message}</p>
+                <p className="text-red-500 text-sm mt-2">{form.formState.errors.email.message}</p>
               )}
             </div>
             <div>
-              <Label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+              <Label htmlFor="phone" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
                 Phone
               </Label>
               <Input
                 id="phone"
                 type="tel"
                 {...form.register("phone")}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-800 focus:border-transparent"
+                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
                 disabled={isSubmitting}
               />
             </div>
           </div>
 
-          <div className="mb-6">
-            <Label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+          <div className="mb-8">
+            <Label htmlFor="message" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
               Message
             </Label>
             <Textarea
               id="message"
-              rows={4}
+              rows={5}
               {...form.register("message")}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-800 focus:border-transparent"
-              placeholder="Tell us about your project and requirements..."
+              className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
+              placeholder="Describe your financial modeling requirements..."
               disabled={isSubmitting}
             />
           </div>
@@ -150,13 +150,13 @@ export default function ContactSection() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-navy-800 text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-navy-700 transition-colors duration-300 disabled:opacity-50"
+            className="w-full bg-oxford-blue text-white py-5 px-8 text-lg font-medium hover:bg-bronze transition-all duration-500 disabled:opacity-50 uppercase tracking-wide"
           >
-            {isSubmitting ? "Sending..." : "Start Your Project"}
+            {isSubmitting ? "Sending..." : "Begin Conversation"}
           </Button>
 
-          <p className="text-sm text-gray-500 text-center mt-4">
-            We respect your privacy and never send marketing emails
+          <p className="text-sm text-muted-text text-center mt-6 font-body">
+            Confidential consultation. No marketing communications.
           </p>
         </form>
       </div>

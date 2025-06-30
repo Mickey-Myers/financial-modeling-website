@@ -52,11 +52,26 @@ export default function HeroSection() {
             </div>
           </div>
           <div className={`fade-in ${isIntersecting ? "visible" : ""}`}>
-            <img 
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800" 
-              alt="Professional business meeting" 
-              className="rounded-2xl shadow-2xl w-full h-auto" 
-            />
+            <div className="relative">
+              <div className="bg-light-accent p-8 shadow-xl">
+                <div className="aspect-[4/3] bg-gradient-to-br from-oxford-blue/10 to-bronze/20 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <div className="w-16 h-16 bg-oxford-blue/20 mx-auto flex items-center justify-center">
+                      <svg className="w-8 h-8 text-oxford-blue" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+                      </svg>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="h-2 bg-oxford-blue/30 w-3/4 mx-auto"></div>
+                      <div className="h-2 bg-bronze/40 w-1/2 mx-auto"></div>
+                      <div className="h-2 bg-oxford-blue/20 w-2/3 mx-auto"></div>
+                    </div>
+                    <p className="text-sm text-muted-text font-medium">Financial Model Preview</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-bronze/10 -z-10"></div>
+            </div>
           </div>
         </div>
       </div>
