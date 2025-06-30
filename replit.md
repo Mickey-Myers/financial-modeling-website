@@ -1,8 +1,8 @@
-# Professional Financial Modeling Website
+# Financial Modeling Partners - Institutional Financial Advisory
 
 ## Overview
 
-This is a modern, responsive one-page website for a professional financial modeling consulting business. The application showcases financial modeling services with clean aesthetics, fast performance, and conversion-focused design. Built using React with TypeScript, TailwindCSS for styling, and Express.js for the backend API.
+This is a sophisticated, institutional-grade one-page website for Financial Modeling Partners, designed to match the prestige and aesthetic of firms like Moelis, Allen & Co., or Centerview Partners. The application showcases institutional financial modeling services with refined typography, sophisticated color schemes, and elevated design language targeting PE/VC-backed companies, real estate developers, and family offices. Built using React with TypeScript, TailwindCSS for styling, and Express.js for the backend API.
 
 ## System Architecture
 
@@ -24,11 +24,11 @@ This is a modern, responsive one-page website for a professional financial model
 - **Development**: Hot module replacement with Vite integration
 
 ### Design System
-- **Color Scheme**: Professional navy and neutral tones
-- **Typography**: Inter font family for modern readability
-- **Components**: Consistent design tokens and reusable UI components
-- **Responsive Design**: Mobile-first approach with breakpoint-based layouts
-- **Animations**: Intersection Observer for scroll-triggered animations
+- **Color Scheme**: Institutional palette with Oxford Blue (#0B1F35), Bronze (#A38658), Champagne (#C1B398), and Ivory (#FAFAF7)
+- **Typography**: Playfair Display (serif headlines) and Inter (body text) for sophisticated, editorial feel
+- **Components**: Refined UI components with elegant cards, subtle hover effects, and institutional styling
+- **Responsive Design**: Mobile-first approach with generous spacing and sophisticated layouts
+- **Animations**: Smooth intersection-based animations with extended duration for premium feel
 
 ## Key Components
 
@@ -119,7 +119,18 @@ This is a modern, responsive one-page website for a professional financial model
 
 ```
 Changelog:
-- June 30, 2025. Initial setup
+- June 30, 2025. Initial setup with professional financial modeling website
+- June 30, 2025. Complete institutional redesign transformation:
+  - Rebranded to "Financial Modeling Partners"
+  - Implemented sophisticated typography with Playfair Display headlines
+  - Updated color palette to institutional Oxford Blue, Bronze, Champagne, and Ivory
+  - Refined all UI components with elegant cards and premium hover effects
+  - Enhanced content tone for institutional clientele (PE/VC/Family Offices)
+  - Updated navigation, hero, services, testimonials, and all sections
+  - Added serif numerals for track record statistics
+  - Implemented squared buttons with uppercase tracking
+  - Created custom financial model preview graphic
+  - Elevated contact form with institutional language
 ```
 
 ## User Preferences
