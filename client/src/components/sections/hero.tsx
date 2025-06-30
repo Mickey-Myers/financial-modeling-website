@@ -18,9 +18,10 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-32 pb-32 bg-ivory overflow-hidden">
+    <section className="pt-32 pb-32 bg-gradient-to-br from-ivory via-background to-light-accent overflow-hidden relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/5 via-transparent to-bronze/10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[90vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[90vh] relative z-10">
           <div 
             ref={ref}
             className={`fade-in ${isIntersecting ? "visible" : ""}`}
@@ -36,13 +37,13 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-6">
               <button 
                 onClick={scrollToContact}
-                className="bg-oxford-blue text-white px-12 py-5 text-lg font-medium hover:bg-bronze transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
+                className="bg-gradient-to-r from-oxford-blue to-oxford-blue/90 text-white px-12 py-5 text-lg font-medium hover:from-bronze hover:to-bronze/90 transition-all duration-300 text-center shadow-2xl hover:shadow-bronze/20 hover:translate-y-[-4px] transform"
               >
                 Book an Intro Call
               </button>
               <button 
                 onClick={scrollToServices}
-                className="border-2 border-oxford-blue/30 text-oxford-blue px-12 py-5 text-lg font-medium hover:bg-oxford-blue/5 transition-all duration-300 text-center"
+                className="border-2 border-oxford-blue/30 text-oxford-blue px-12 py-5 text-lg font-medium hover:bg-gradient-to-r hover:from-oxford-blue/5 hover:to-oxford-blue/10 transition-all duration-300 text-center shadow-lg hover:shadow-xl backdrop-blur-sm bg-white/80"
               >
                 Explore Services
               </button>
@@ -50,24 +51,25 @@ export default function HeroSection() {
           </div>
           <div className={`fade-in ${isIntersecting ? "visible" : ""}`}>
             <div className="relative">
-              <div className="bg-light-accent p-8 shadow-xl">
-                <div className="aspect-[4/3] bg-gradient-to-br from-oxford-blue/10 to-bronze/20 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="w-16 h-16 bg-oxford-blue/20 mx-auto flex items-center justify-center">
-                      <svg className="w-8 h-8 text-oxford-blue" fill="currentColor" viewBox="0 0 24 24">
+              <div className="bg-gradient-to-br from-light-accent to-background p-10 shadow-2xl border border-white/50 backdrop-blur-lg">
+                <div className="aspect-[4/3] bg-gradient-to-br from-oxford-blue/15 via-bronze/10 to-oxford-blue/5 flex items-center justify-center shadow-inner">
+                  <div className="text-center space-y-6">
+                    <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 mx-auto flex items-center justify-center shadow-lg">
+                      <svg className="w-10 h-10 text-white drop-shadow-md" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
                       </svg>
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-2 bg-oxford-blue/30 w-3/4 mx-auto"></div>
-                      <div className="h-2 bg-bronze/40 w-1/2 mx-auto"></div>
-                      <div className="h-2 bg-oxford-blue/20 w-2/3 mx-auto"></div>
+                    <div className="space-y-3">
+                      <div className="h-3 bg-gradient-to-r from-oxford-blue/40 to-oxford-blue/20 w-3/4 mx-auto shadow-sm rounded-full"></div>
+                      <div className="h-3 bg-gradient-to-r from-bronze/50 to-bronze/30 w-1/2 mx-auto shadow-sm rounded-full"></div>
+                      <div className="h-3 bg-gradient-to-r from-oxford-blue/30 to-oxford-blue/10 w-2/3 mx-auto shadow-sm rounded-full"></div>
                     </div>
-                    <p className="text-sm text-muted-text font-medium">Financial Model Preview</p>
+                    <p className="text-sm text-muted-text font-medium drop-shadow-sm">Financial Model Preview</p>
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-bronze/10 -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-bronze/20 to-bronze/5 -z-10 shadow-xl rounded-lg"></div>
+              <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-oxford-blue/10 to-oxford-blue/5 -z-10 shadow-lg rounded-full"></div>
             </div>
           </div>
         </div>

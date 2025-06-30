@@ -8,8 +8,9 @@ export default function ServicesSection() {
   const { ref: card3Ref, isIntersecting: card3Visible } = useIntersectionObserver();
 
   return (
-    <section id="services" className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-24 bg-gradient-to-b from-background via-light-accent to-background relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-oxford-blue/5 to-transparent"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
