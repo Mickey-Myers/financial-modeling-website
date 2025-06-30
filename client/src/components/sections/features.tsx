@@ -32,8 +32,9 @@ export default function FeaturesSection() {
   const { ref: gridRef, isIntersecting: gridVisible } = useIntersectionObserver();
 
   return (
-    <section className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-br from-background via-light-accent to-ivory relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/3 via-transparent to-bronze/5"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
@@ -50,8 +51,8 @@ export default function FeaturesSection() {
         >
           {features.map((feature, index) => (
             <div key={index} className="flex items-start space-x-4">
-              <div className="w-6 h-6 bg-bronze rounded-full flex items-center justify-center mt-1 flex-shrink-0">
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-6 h-6 bg-gradient-to-br from-bronze to-bronze/80 rounded-full flex items-center justify-center mt-1 flex-shrink-0 shadow-lg">
+                <svg className="w-3 h-3 text-white drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>

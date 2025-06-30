@@ -7,8 +7,9 @@ export default function ProcessSection() {
   const { ref: step3Ref, isIntersecting: step3Visible } = useIntersectionObserver();
 
   return (
-    <section className="py-24 bg-light-accent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-gradient-to-b from-light-accent via-background to-light-accent relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-bronze/5 via-transparent to-oxford-blue/5"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
@@ -22,8 +23,8 @@ export default function ProcessSection() {
             ref={step1Ref}
             className={`text-center fade-in ${step1Visible ? "visible" : ""}`}
           >
-            <div className="w-20 h-20 bg-oxford-blue flex items-center justify-center mx-auto mb-8">
-              <span className="serif-nums text-2xl font-semibold text-white">I</span>
+            <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 flex items-center justify-center mx-auto mb-8 shadow-2xl">
+              <span className="serif-nums text-2xl font-semibold text-white drop-shadow-md">I</span>
             </div>
             <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Discovery Call</h3>
             <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">30 Minutes</p>
@@ -34,8 +35,8 @@ export default function ProcessSection() {
             ref={step2Ref}
             className={`text-center fade-in ${step2Visible ? "visible" : ""}`}
           >
-            <div className="w-20 h-20 bg-oxford-blue flex items-center justify-center mx-auto mb-8">
-              <span className="serif-nums text-2xl font-semibold text-white">II</span>
+            <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 flex items-center justify-center mx-auto mb-8 shadow-2xl">
+              <span className="serif-nums text-2xl font-semibold text-white drop-shadow-md">II</span>
             </div>
             <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Model Build</h3>
             <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">5-7 Days</p>
@@ -46,8 +47,8 @@ export default function ProcessSection() {
             ref={step3Ref}
             className={`text-center fade-in ${step3Visible ? "visible" : ""}`}
           >
-            <div className="w-20 h-20 bg-oxford-blue flex items-center justify-center mx-auto mb-8">
-              <span className="serif-nums text-2xl font-semibold text-white">III</span>
+            <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 flex items-center justify-center mx-auto mb-8 shadow-2xl">
+              <span className="serif-nums text-2xl font-semibold text-white drop-shadow-md">III</span>
             </div>
             <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Delivery + Support</h3>
             <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">Ongoing</p>

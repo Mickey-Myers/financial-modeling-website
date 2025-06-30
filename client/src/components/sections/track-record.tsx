@@ -8,7 +8,7 @@ export default function TrackRecordSection() {
     <section id="track-record" className="py-24 bg-gradient-to-br from-oxford-blue via-oxford-blue/95 to-oxford-blue/90 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-bronze/10 via-transparent to-bronze/5"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(163,134,88,0.15),transparent_70%)]"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={ref}
           className={`text-center mb-16 fade-in ${isIntersecting ? "visible" : ""}`}
