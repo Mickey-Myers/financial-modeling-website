@@ -82,7 +82,7 @@ export default function ContactSection() {
                 id="fullName"
                 type="text"
                 {...form.register("fullName")}
-                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
               {form.formState.errors.fullName && (
@@ -97,7 +97,7 @@ export default function ContactSection() {
                 id="company"
                 type="text"
                 {...form.register("company")}
-                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
             </div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
                 id="email"
                 type="email"
                 {...form.register("email")}
-                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
               {form.formState.errors.email && (
@@ -127,7 +127,7 @@ export default function ContactSection() {
                 id="phone"
                 type="tel"
                 {...form.register("phone")}
-                className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
             </div>
@@ -141,7 +141,7 @@ export default function ContactSection() {
               id="message"
               rows={5}
               {...form.register("message")}
-              className="w-full px-4 py-4 border border-border bg-background text-near-black focus:ring-2 focus:ring-oxford-blue focus:border-oxford-blue text-lg"
+              className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
               placeholder="Describe your financial modeling requirements..."
               disabled={isSubmitting}
             />
@@ -150,7 +150,7 @@ export default function ContactSection() {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-oxford-blue text-white py-5 px-8 text-lg font-medium hover:bg-bronze transition-all duration-500 disabled:opacity-50 uppercase tracking-wide"
+            className="w-full bg-oxford-blue text-white py-6 px-12 text-lg font-medium hover:bg-bronze transition-all duration-500 disabled:opacity-50 uppercase tracking-wide shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
           >
             {isSubmitting ? "Sending..." : "Begin Conversation"}
           </Button>
