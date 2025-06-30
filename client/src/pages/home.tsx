@@ -20,13 +20,16 @@ export default function Home() {
       <ContactSection />
       
       {/* Footer */}
-      <footer className="bg-near-black text-white py-16">
+      <footer className="bg-near-black text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-display font-medium mb-4 tracking-tight">Financial Modeling Partners</h3>
-            <p className="text-champagne mb-8 font-body">Institutional Financial Advisory</p>
-            <div className="border-t border-champagne/20 pt-8">
-              <p className="text-sm text-champagne/70 uppercase tracking-wide">© 2025 Financial Modeling Partners. All rights reserved.</p>
+            <h3 className="text-xl font-display font-medium mb-4 tracking-tight">Financial Modeling Partners</h3>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-6">
+              <a href="#services" className="text-champagne hover:text-white transition-colors">Services</a>
+              <a href="#contact" className="text-champagne hover:text-white transition-colors">Contact</a>
+            </div>
+            <div className="border-t border-champagne/20 pt-6">
+              <p className="text-sm text-champagne/70">© 2025 Financial Modeling Partners. Terms • Privacy</p>
             </div>
           </div>
         </div>

@@ -45,25 +45,13 @@ export default function Navigation() {
                 onClick={() => scrollToSection("track-record")}
                 className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
               >
-                Track Record
-              </button>
-              <button 
-                onClick={() => scrollToSection("case-studies")}
-                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
-              >
-                Case Studies
-              </button>
-              <button 
-                onClick={() => scrollToSection("team")}
-                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
-              >
-                Team
+                Proof
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="bg-oxford-blue text-white px-6 py-2 text-sm font-medium hover:bg-bronze transition-all duration-300 uppercase tracking-wide"
+                className="bg-oxford-blue text-white px-6 py-2 text-sm font-medium hover:bg-bronze transition-all duration-300"
               >
-                Get Started
+                Book Call
               </button>
             </div>
           </div>
@@ -93,25 +81,13 @@ export default function Navigation() {
                 onClick={() => scrollToSection("track-record")}
                 className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
               >
-                Track Record
-              </button>
-              <button 
-                onClick={() => scrollToSection("case-studies")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
-              >
-                Case Studies
-              </button>
-              <button 
-                onClick={() => scrollToSection("team")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
-              >
-                Team
+                Proof
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="block w-full text-left px-3 py-2 text-base font-medium bg-oxford-blue text-white mt-2 uppercase tracking-wide"
+                className="block w-full text-left px-3 py-2 text-base font-medium bg-oxford-blue text-white mt-2"
               >
-                Get Started
+                Book Call
               </button>
             </div>
           </div>
