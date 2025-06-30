@@ -49,14 +49,14 @@ export default function CaseStudiesSection() {
   ];
 
   return (
-    <section id="case-studies" className="py-20 bg-white">
+    <section id="case-studies" className="py-24 bg-light-accent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={titleRef}
-          className={`text-center mb-16 fade-in ${titleVisible ? "visible" : ""}`}
+          className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Case Studies</h2>
-          <p className="text-xl text-gray-600">Real results from real clients</p>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Selected Engagements</h2>
+          <p className="text-xl text-muted-text font-body">Institutional outcomes across diverse transactions</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -67,17 +67,19 @@ export default function CaseStudiesSection() {
               <div 
                 key={index}
                 ref={ref}
-                className={`bg-slate-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 fade-in ${isIntersecting ? "visible" : ""}`}
+                className={`elegant-card overflow-hidden fade-in ${isIntersecting ? "visible" : ""}`}
               >
-                <img 
-                  src={study.image} 
-                  alt={study.alt} 
-                  className="w-full h-48 object-cover" 
-                />
-                <div className="p-6">
-                  <div className="text-sm navy-800 font-semibold mb-2">{study.category}</div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">{study.title}</h3>
-                  <p className="text-gray-600 text-sm">{study.description}</p>
+                <div className="aspect-[4/3] bg-gradient-to-br from-oxford-blue/5 to-bronze/10 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-oxford-blue/10 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-bronze" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <div className="text-sm text-bronze font-medium mb-3 uppercase tracking-wide">{study.category}</div>
+                  <h3 className="text-xl font-display font-medium text-near-black mb-4 leading-tight">{study.title}</h3>
+                  <p className="text-muted-text text-sm font-body leading-relaxed">{study.description}</p>
                 </div>
               </div>
             );

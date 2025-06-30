@@ -8,63 +8,63 @@ export default function IndustriesSection() {
   const { ref: industriesRef, isIntersecting: industriesVisible } = useIntersectionObserver();
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={titleRef}
-          className={`text-center mb-16 fade-in ${titleVisible ? "visible" : ""}`}
+          className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Industries & Clients</h2>
-          <p className="text-xl text-gray-600">We serve diverse clients across multiple industries</p>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Client Ecosystem</h2>
+          <p className="text-xl text-muted-text font-body">Trusted by institutional investors and sophisticated enterprises</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div 
             ref={companiesRef}
-            className={`text-center fade-in ${companiesVisible ? "visible" : ""}`}
+            className={`text-left fade-in ${companiesVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-semibold navy-800 mb-4">Companies</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>VC-backed</li>
-              <li>PE-backed</li>
-              <li>Public</li>
-              <li>Private</li>
+            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Portfolio Companies</h3>
+            <ul className="space-y-3 text-muted-text font-body">
+              <li>VC-Backed Enterprises</li>
+              <li>PE Portfolio Companies</li>
+              <li>Public Companies</li>
+              <li>Private Holdings</li>
             </ul>
           </div>
 
           <div 
             ref={investorsRef}
-            className={`text-center fade-in ${investorsVisible ? "visible" : ""}`}
+            className={`text-left fade-in ${investorsVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-semibold navy-800 mb-4">Investors</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>Private Equity</li>
-              <li>Family Office</li>
-              <li>Private Credit</li>
+            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Capital Partners</h3>
+            <ul className="space-y-3 text-muted-text font-body">
+              <li>Private Equity Funds</li>
+              <li>Family Offices</li>
+              <li>Credit Funds</li>
             </ul>
           </div>
 
           <div 
             ref={developersRef}
-            className={`text-center fade-in ${developersVisible ? "visible" : ""}`}
+            className={`text-left fade-in ${developersVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-semibold navy-800 mb-4">Developers</h3>
-            <ul className="space-y-2 text-gray-600">
+            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Development</h3>
+            <ul className="space-y-3 text-muted-text font-body">
               <li>Real Estate</li>
               <li>Infrastructure</li>
-              <li>Energy</li>
+              <li>Energy Projects</li>
             </ul>
           </div>
 
           <div 
             ref={industriesRef}
-            className={`text-center fade-in ${industriesVisible ? "visible" : ""}`}
+            className={`text-left fade-in ${industriesVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-semibold navy-800 mb-4">Industries</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>Healthcare</li>
+            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Sectors</h3>
+            <ul className="space-y-3 text-muted-text font-body">
+              <li>Healthcare & Life Sciences</li>
               <li>Technology</li>
-              <li>Consumer</li>
+              <li>Consumer & Retail</li>
               <li>Business Services</li>
             </ul>
           </div>
