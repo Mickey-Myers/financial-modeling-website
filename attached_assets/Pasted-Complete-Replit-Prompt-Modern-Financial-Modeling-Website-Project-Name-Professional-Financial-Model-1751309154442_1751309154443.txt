@@ -1,0 +1,116 @@
+Complete Replit Prompt: Modern Financial Modeling Website
+Project Name: Professional Financial Modeling Consulting Website
+📌 OBJECTIVE:
+Build a professional, responsive one-page website that showcases financial modeling services with modern design, clear CTAs, and conversion-focused copy. Focus on clean aesthetics, fast performance, and lead generation.
+🛠 TECH STACK:
+
+Frontend: React + TailwindCSS
+Form: Formspree or EmailJS for contact form
+Hosting: Replit or export to Vercel
+SEO: Include meta tags, OG tags, and sitemap
+
+🧱 PAGE SECTIONS (One-Page Scroll Layout):
+1. Hero Section
+
+Headline: "Excel Financial Models That Actually Work"
+Subtext: "Professional financial models that help companies raise capital, close deals, and make confident investment decisions. Built by former Investment Bankers & Private Equity / Hedge Fund professionals."
+Trust Line: "Used by companies that have raised $2B+."
+CTA: "Get Your Model Built" (scrolls to contact form)
+Visual: Clean gradient background or wave SVG + subtle animation
+
+2. Services Section
+Create 3 service cards with icons:
+
+"Investor-Ready Models That Get Funded"
+"Professional financial models that investors actually want to see. Clear assumptions, defensible projections, and scenario analysis that builds confidence in your deal."
+"Due Diligence Models That Uncover Real Value"
+"Custom Excel models that help you evaluate deals with confidence. From initial screening to final negotiations, get the analysis you need to make smart investment decisions."
+"Complex Modeling When You Need It Most"
+"Merger models, restructuring analysis, valuation updates - whatever financial challenge you're facing, we build the models that give you clarity and confidence."
+
+3. Track Record (Stats with Animation)
+
+"150+ Models Built, $2B+ Capital Raised"
+"100+ M&A Transactions Supported"
+"13 Industries Served Nationwide"
+Subtext: "Our models don't just look professional - they deliver results."
+Add scrolling number animation
+
+4. Industries & Clients
+Grouped sections:
+
+Companies: VC-backed, PE-backed, Public, Private
+Investors: Private Equity, Family Office, Private Credit
+Developers: Real Estate, Infrastructure, Energy
+Industry tags: Healthcare, Real Estate, Energy, Tech, Consumer, Business Services
+
+5. Case Studies Section
+6 project examples (use placeholder content):
+
+Financial Modeling: "Multi-Family Developer Gets New Acquisition Model to Grow Portfolio"
+Financial Modeling: "Renewable Energy Developer Upgrades Portfolio Model"
+Strategic Advisory: "Healthcare Technology Business Raises $22M Series B"
+Strategic Advisory: "E-Commerce Company Secures $6M Line of Credit"
+Financial Modeling: "Affordable Housing Developer Gets New Acquisition Model"
+Financial Modeling: "Mineral Acquisition Company Successfully Raises New Fund"
+
+6. Testimonials Carousel
+Use rotating testimonials with titles:
+
+"Instrumental partner in helping us successfully raise $22M. Highly recommend." - CEO, High-Growth Technology Business
+"Blown away at their financial modeling skills and ability to add value." - CFO, Large Renewable Energy Projects
+"Clean, clear, accurate, digestible models - easy to share internally and externally." - Principal, Family Office ($1.3B AUM)
+
+7. Team Section
+Two team member cards with placeholder bios:
+
+Managing Partner: Former investment banker and PE professional with 100+ client models
+Managing Partner: Former strategic financial consultant and CFO advisor
+Include professional headshot placeholders
+
+8. Process Section (3 Steps)
+
+Step 1: "Understand Your Challenge (30 minutes)"
+Step 2: "Professional Model Delivered (5-7 days)"
+Step 3: "Revisions & Training Included"
+
+9. Engagement Models
+3 cards: Project | Part-Time | Interim
+
+Project: "Custom plan and deliverables on your timeline"
+Part-Time: "Flexible extension of your team on ongoing basis"
+Interim: "Fill the gap during transitions or urgent needs"
+
+10. Contact Form
+Fields: Full Name*, Company, Email*, Phone, Message
+
+Primary CTA: "Start Your Project"
+Privacy notice: "We respect your privacy and never send marketing emails"
+
+✨ DESIGN REQUIREMENTS:
+
+Modern fonts: Inter or Work Sans
+Color scheme: Navy/white/gray with one professional accent color
+Lots of white space - clean, uncluttered layout
+Mobile-first responsive design
+Subtle animations: fade-ins on scroll, number counters
+Professional stock photos: business meetings, analytics, Excel screenshots
+Fast loading: optimized images, under 3 seconds load time
+Sticky navigation with smooth scrolling
+
+🧠 OPTIONAL ENHANCEMENTS:
+
+Calendly integration for scheduling calls
+Google Analytics setup
+Export capability to Vercel/Netlify
+Form validation and success/error states
+
+📄 DELIVERABLES:
+
+Live Replit URL
+Clean, commented code
+Mobile-responsive design
+Working contact form
+Easy content update instructions
+
+Focus on conversion optimization with clear value propositions, multiple CTAs, and professional credibility throughout.
