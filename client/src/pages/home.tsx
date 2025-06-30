@@ -2,12 +2,9 @@ import Navigation from "@/components/ui/navigation";
 import HeroSection from "@/components/sections/hero";
 import ServicesSection from "@/components/sections/services";
 import TrackRecordSection from "@/components/sections/track-record";
-import IndustriesSection from "@/components/sections/industries";
-import CaseStudiesSection from "@/components/sections/case-studies";
-import TestimonialsSection from "@/components/sections/testimonials";
-import TeamSection from "@/components/sections/team";
+import FeaturesSection from "@/components/sections/features";
 import ProcessSection from "@/components/sections/process";
-import EngagementModelsSection from "@/components/sections/engagement-models";
+import TestimonialsSection from "@/components/sections/testimonials";
 import ContactSection from "@/components/sections/contact";
 
 export default function Home() {
@@ -17,12 +14,9 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <TrackRecordSection />
-      <IndustriesSection />
-      <CaseStudiesSection />
-      <TestimonialsSection />
-      <TeamSection />
+      <FeaturesSection />
       <ProcessSection />
-      <EngagementModelsSection />
+      <TestimonialsSection />
       <ContactSection />
       
       {/* Footer */}

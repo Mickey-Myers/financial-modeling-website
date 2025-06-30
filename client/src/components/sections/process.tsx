@@ -13,8 +13,8 @@ export default function ProcessSection() {
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Engagement Process</h2>
-          <p className="text-xl text-muted-text font-body">Disciplined approach to institutional-quality deliverables</p>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Process Timeline</h2>
+          <p className="text-xl text-muted-text font-body">Simple, fast, effective</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -25,9 +25,9 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-oxford-blue flex items-center justify-center mx-auto mb-8">
               <span className="serif-nums text-2xl font-semibold text-white">I</span>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Strategic Discovery</h3>
+            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Discovery Call</h3>
             <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">30 Minutes</p>
-            <p className="text-muted-text font-body leading-relaxed">Comprehensive scoping session to understand your analytical requirements, stakeholder expectations, and deliverable specifications.</p>
+            <p className="text-muted-text font-body leading-relaxed">Understand your goals and scope the project requirements.</p>
           </div>
 
           <div 
@@ -37,9 +37,9 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-oxford-blue flex items-center justify-center mx-auto mb-8">
               <span className="serif-nums text-2xl font-semibold text-white">II</span>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Model Development</h3>
+            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Model Build</h3>
             <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">5-7 Days</p>
-            <p className="text-muted-text font-body leading-relaxed">Institutional-quality financial model delivered with rigorous documentation, sensitivity analysis, and scenario modeling capabilities.</p>
+            <p className="text-muted-text font-body leading-relaxed">We build, review, and revise your custom Excel model.</p>
           </div>
 
           <div 
@@ -49,9 +49,9 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-oxford-blue flex items-center justify-center mx-auto mb-8">
               <span className="serif-nums text-2xl font-semibold text-white">III</span>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Knowledge Transfer</h3>
-            <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">Ongoing Support</p>
-            <p className="text-muted-text font-body leading-relaxed">Comprehensive model walkthrough, user training, and iterative refinements to ensure optimal utilization and stakeholder confidence.</p>
+            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Delivery + Support</h3>
+            <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">Ongoing</p>
+            <p className="text-muted-text font-body leading-relaxed">Final file, onboarding, and optional ongoing help.</p>
           </div>
         </div>
       </div>

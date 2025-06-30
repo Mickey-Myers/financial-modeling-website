@@ -65,8 +65,8 @@ export default function ContactSection() {
           ref={ref}
           className={`text-center mb-16 fade-in ${isIntersecting ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Let's Build Something Institutional</h2>
-          <p className="text-xl text-champagne font-body">Ready to elevate your financial analysis? We're here to help.</p>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Let's Build Your Model</h2>
+          <p className="text-xl text-champagne font-body">Ready to get started? Book a free intro call.</p>
         </div>
 
         <form 
@@ -152,7 +152,7 @@ export default function ContactSection() {
             disabled={isSubmitting}
             className="w-full bg-oxford-blue text-white py-6 px-12 text-lg font-medium hover:bg-bronze transition-all duration-500 disabled:opacity-50 uppercase tracking-wide shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
           >
-            {isSubmitting ? "Sending..." : "Begin Conversation"}
+            {isSubmitting ? "Sending..." : "Book a Free Intro Call"}
           </Button>
 
           <p className="text-sm text-muted-text text-center mt-6 font-body">
