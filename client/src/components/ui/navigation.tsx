@@ -29,7 +29,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold navy-800">FinModel Pro</h1>
+            <h1 className="text-xl font-display font-semibold text-oxford-blue tracking-tight">Financial Modeling Partners</h1>
           </div>
           
           {/* Desktop Navigation */}
@@ -37,31 +37,31 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button 
                 onClick={() => scrollToSection("services")}
-                className="text-gray-600 hover:navy-800 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection("track-record")}
-                className="text-gray-600 hover:navy-800 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
               >
                 Track Record
               </button>
               <button 
                 onClick={() => scrollToSection("case-studies")}
-                className="text-gray-600 hover:navy-800 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
               >
                 Case Studies
               </button>
               <button 
                 onClick={() => scrollToSection("team")}
-                className="text-gray-600 hover:navy-800 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
               >
                 Team
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="bg-navy-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-navy-700 transition-colors"
+                className="bg-oxford-blue text-white px-6 py-2 text-sm font-medium hover:bg-bronze transition-all duration-300 uppercase tracking-wide"
               >
                 Get Started
               </button>
@@ -85,31 +85,31 @@ export default function Navigation() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
               <button 
                 onClick={() => scrollToSection("services")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-600 hover:navy-800"
+                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection("track-record")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-600 hover:navy-800"
+                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
               >
                 Track Record
               </button>
               <button 
                 onClick={() => scrollToSection("case-studies")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-600 hover:navy-800"
+                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
               >
                 Case Studies
               </button>
               <button 
                 onClick={() => scrollToSection("team")}
-                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-600 hover:navy-800"
+                className="block w-full text-left px-3 py-2 text-base font-medium text-muted-text hover:text-oxford-blue"
               >
                 Team
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="block w-full text-left px-3 py-2 text-base font-medium bg-navy-800 text-white rounded-lg mt-2"
+                className="block w-full text-left px-3 py-2 text-base font-medium bg-oxford-blue text-white mt-2 uppercase tracking-wide"
               >
                 Get Started
               </button>

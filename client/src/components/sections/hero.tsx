@@ -18,34 +18,36 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-20 pb-16 bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+    <section className="pt-24 pb-20 bg-ivory overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
           <div 
             ref={ref}
             className={`fade-in ${isIntersecting ? "visible" : ""}`}
           >
-            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Excel Financial Models That <span className="navy-800">Actually Work</span>
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-near-black leading-[1.1] mb-8 tracking-tight">
+              Institutional Financial <span className="text-bronze italic">Models</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-              Professional financial models that help companies raise capital, close deals, and make confident investment decisions. Built by former Investment Bankers & Private Equity / Hedge Fund professionals.
-            </p>
-            <p className="text-lg navy-800 font-semibold mb-8">
-              Used by companies that have raised $2B+
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="mb-8">
+              <p className="text-lg text-bronze font-medium tracking-wide uppercase mb-3">
+                Built by bankers. Trusted by funds.
+              </p>
+              <p className="text-xl text-muted-text mb-6 leading-relaxed font-body">
+                Institutional-grade financial models for PE/VC-backed companies, real estate developers, and family offices. The caliber of analysis you expect from Moelis or Centerview.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-6">
               <button 
                 onClick={scrollToContact}
-                className="bg-navy-800 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-700 transition-all duration-300 text-center"
+                className="bg-oxford-blue text-white px-12 py-4 text-lg font-medium hover:bg-bronze transition-all duration-500 text-center uppercase tracking-wide"
               >
-                Get Your Model Built
+                Start a Conversation
               </button>
               <button 
                 onClick={scrollToServices}
-                className="border-2 border-navy-800 navy-800 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-navy-800 hover:text-white transition-all duration-300 text-center"
+                className="border border-oxford-blue text-oxford-blue px-12 py-4 text-lg font-medium hover:bg-oxford-blue hover:text-white transition-all duration-500 text-center uppercase tracking-wide"
               >
-                Learn More
+                Our Approach
               </button>
             </div>
           </div>

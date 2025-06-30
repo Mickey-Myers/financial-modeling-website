@@ -1,0 +1,103 @@
+I already have a working version of the site generated, but I need a full visual and UI/UX refinement pass. The goal is to make this site look and feel like a prestigious institutional financial advisory firm — think Moelis, Allen & Co., or Centerview Partners, not a startup.
+
+The layout can remain largely the same, but design quality, spacing, typography, colors, and tone all need to be elevated.
+
+🧱 Design & Branding Direction:
+✅ What to Improve
+Typography
+
+Replace all fonts with:
+
+Headlines: Playfair Display (or similar refined serif)
+
+Body Text: Inter, IBM Plex Sans, or Source Serif Pro
+
+Increase spacing between sections and use larger type sizes (especially in hero and service sections)
+
+Color Scheme (Replace current blue/black theme)
+
+Background: #FAFAF7 (soft ivory) OR #1A1A1A (for dark theme)
+
+Primary Accent: #0B1F35 (deep oxford blue)
+
+Secondary Accent: #A38658 (bronze) or #C1B398 (champagne)
+
+Text: Almost-black or off-white depending on background
+
+Buttons
+
+Use full-width or capitalized text buttons with slimmer padding
+
+Remove large border-radius (make squared or slightly rounded)
+
+Keep hover effects subtle and elegant
+
+Hero Section
+
+Make headline larger and more elegant (centered or left-aligned with proper spacing)
+
+Replace chart screenshot with a cleaner visual (e.g. blurred Excel model, branded graphic, or muted animated GIF if possible)
+
+Use an editorial-style tagline below header (e.g. "Built by bankers. Trusted by funds.")
+
+Services Section
+
+Keep the 3-column layout but:
+
+Use refined icons (minimalist, thin-line, matching the tone)
+
+Unify card heights with equal spacing
+
+Slight hover lift or shadow (subtle)
+
+Track Record Section
+
+Use serif numerals (visually elegant)
+
+Left-align or center with balanced grid
+
+Add optional muted gridlines for structure
+
+Testimonials Section
+
+Replace dark carousel with static quote blocks or a wall of testimonials
+
+Italicize quotes and use spacing to elevate
+
+Attribution in small caps or muted type (firm names optional)
+
+Remove carousel dots and pause controls for cleaner UX
+
+Team Section
+
+Include space for black-and-white portraits or initials
+
+Use stacked layout for bios with a 1-line summary for each
+
+Consider using expand-on-click bio reveal for optional polish
+
+Contact CTA
+
+Use elevated language and layout:
+
+“Let’s Build Something Institutional.”
+
+Slim horizontal form or scroll-triggered modal
+
+✅ Deliverables
+Updated code with full design improvements above
+
+Live preview link on Replit
+
+Fonts hosted and loaded properly (Google Fonts is fine)
+
+Optional: dark/light mode toggle if quick to implement
+
+💬 Tone, Brand, and Target
+Firm name: Financial Modeling Partners
+
+Target client: Institutional — PE/VC-backed companies, real estate developers, family offices
+
+Design tone: Sophisticated, minimalist, editorial, credible
+
+No cheesy icons, stock images, or overly “techy” elements
