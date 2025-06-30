@@ -41,18 +41,22 @@ export default function TestimonialsSection() {
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Client Perspectives</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="elegant-card p-8 text-left">
-              <div className="text-4xl text-bronze mb-6 font-display italic">"</div>
-              <p className="text-lg text-muted-text mb-8 italic leading-relaxed font-body">
+            <div key={index} className="elegant-card p-10 text-left">
+              <div className="mb-6">
+                <svg className="w-8 h-8 text-bronze opacity-60" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+              </div>
+              <p className="text-lg text-muted-text mb-8 italic leading-relaxed font-body max-w-xl">
                 {testimonial.quote}
               </p>
               <div className="border-t border-border pt-6">
-                <div className="text-base font-medium text-near-black uppercase tracking-wide">
+                <div className="text-sm font-medium text-near-black uppercase tracking-wide mb-1">
                   {testimonial.author}
                 </div>
-                <div className="text-sm text-muted-text mt-1">
+                <div className="text-xs text-muted-text/60">
                   {testimonial.firm}
                 </div>
               </div>

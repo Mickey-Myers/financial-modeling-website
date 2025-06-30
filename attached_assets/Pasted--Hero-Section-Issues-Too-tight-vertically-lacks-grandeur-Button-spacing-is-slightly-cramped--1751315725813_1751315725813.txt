@@ -1,0 +1,134 @@
+🟦 Hero Section
+Issues:
+
+Too tight vertically; lacks grandeur.
+
+Button spacing is slightly cramped.
+
+"Our Approach" secondary button feels unimportant.
+
+Fixes:
+
+Add mt-16 mb-24 for breathing room.
+
+Enlarge hero font (text-5xl lg:text-6xl) and increase line-height.
+
+Button stack: widen spacing between the two and align vertically on mobile.
+
+Consider adding a soft background pattern or subtle moving gradient for depth.
+
+🟫 Services / “Our Approach”
+Issues:
+
+Icon styling is inconsistent (size, visual weight).
+
+Grid feels cramped on desktop and over-stacked on mobile.
+
+Fixes:
+
+Standardize icons: use minimalist outline-style SVGs with equal width/height (e.g. w-8 h-8 text-gold)
+
+Add consistent padding in all cards (p-6 lg:p-8) and gap-10 between columns.
+
+Use lg:grid-cols-3 md:grid-cols-2 grid-cols-1 for responsiveness.
+
+Add hover effect: very subtle upward lift with hover:translate-y-[-2px] and a faint shadow.
+
+📊 Track Record ("Our Record")
+Issues:
+
+Typography doesn’t match headline scale.
+
+Feels like a block of stats vs a designed section.
+
+Fixes:
+
+Add vertical dividers between each stat (use border-l border-gold/20 with px-8 spacing).
+
+Convert all numbers to display serif (Playfair Display) and increase to text-5xl lg:text-6xl.
+
+Add a supporting one-liner under each number in muted gold or slate text.
+
+👥 Testimonials / “Client Perspectives”
+Issues:
+
+Quotes look like generic cards — needs prestige treatment.
+
+Name/title hierarchy too flat.
+
+Fixes:
+
+Use quotation mark SVG at top left of each card.
+
+Italicize quote content, reduce line length (max-w xl).
+
+Title (CHIEF FINANCIAL OFFICER) should be text-sm uppercase tracking-wide, with firm name in text-xs text-slate-400.
+
+🧑‍💼 Leadership Section
+Issues:
+
+Layout feels very “template grid” — lacks bio personality.
+
+No photos or identifiers breaks trust.
+
+Fixes:
+
+Replace "MP" with initials in gold inside a round background circle (or just remove).
+
+Add grayscale portrait images with rounded-full or rounded-xl.
+
+Separate name from title with spacing and color (e.g. name white, role in slate).
+
+🧭 Engagement Process
+Issues:
+
+The section is elegant but too rigidly centered.
+
+Icon steps (I, II, III) don’t visually anchor.
+
+Fixes:
+
+Use a vertical line with nodes or number badges that animate slightly on scroll (animate-fadeIn).
+
+Align text left with staggered layout (e.g., step I left, step II right, step III center).
+
+Use text-gold/80 for duration labels like “30 MINUTES” / “5-7 DAYS”
+
+🧩 Client Ecosystem
+Issues:
+
+The 4-column grid feels visually flat and unordered.
+
+The font weights and color usage is too even — lacks hierarchy.
+
+Fixes:
+
+Make headers (PORTFOLIO COMPANIES, etc.) small caps (uppercase text-xs tracking-wider text-gold)
+
+Use bullets or left-aligned line separators (border-l) to visually group entries
+
+Introduce more spacing between column groups
+
+📬 Contact Form
+Issues:
+
+Input boxes are dark-on-dark and look dull.
+
+Button lacks contrast and is too compressed.
+
+Fixes:
+
+Add white borders (border-white/20) and more input padding (py-3 px-4)
+
+Use focus:outline-gold to accent active fields
+
+“BEGIN CONVERSATION” button should match hero CTA button and feel clickable (hover effect, larger font)
+
+🖼 General Styling Upgrades
+Element	Change
+Font Hierarchy	Ensure clear h1, h2, h3 scale. Use Playfair only for display.
+Line Spacing	Use leading-relaxed or leading-loose on most body text.
+Section Padding	Increase vertical spacing to py-24 or more between main sections.
+Color Consistency	Gold should only be used for accents and section labels.
+Responsiveness	Confirm all layouts gracefully degrade at md: and sm: breakpoints.
+

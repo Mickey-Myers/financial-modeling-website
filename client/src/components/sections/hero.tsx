@@ -18,34 +18,34 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-24 pb-20 bg-ivory overflow-hidden">
+    <section className="pt-32 pb-32 bg-ivory overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[90vh]">
           <div 
             ref={ref}
             className={`fade-in ${isIntersecting ? "visible" : ""}`}
           >
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-near-black leading-[1.1] mb-8 tracking-tight">
+            <h1 className="text-6xl md:text-7xl xl:text-8xl font-display font-semibold text-near-black leading-relaxed mb-12 tracking-tight">
               Institutional Financial <span className="text-bronze italic">Models</span>
             </h1>
-            <div className="mb-8">
-              <p className="text-lg text-bronze font-medium tracking-wide uppercase mb-3">
+            <div className="mb-12">
+              <p className="text-lg text-bronze font-medium tracking-wide uppercase mb-4">
                 Built by bankers. Trusted by funds.
               </p>
-              <p className="text-xl text-muted-text mb-6 leading-relaxed font-body">
+              <p className="text-xl text-muted-text mb-8 leading-loose font-body max-w-lg">
                 Institutional-grade financial models for PE/VC-backed companies, real estate developers, and family offices. The caliber of analysis you expect from Moelis or Centerview.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex flex-col sm:flex-row gap-8">
               <button 
                 onClick={scrollToContact}
-                className="bg-oxford-blue text-white px-12 py-4 text-lg font-medium hover:bg-bronze transition-all duration-500 text-center uppercase tracking-wide"
+                className="bg-oxford-blue text-white px-14 py-6 text-lg font-medium hover:bg-bronze transition-all duration-500 text-center uppercase tracking-wide shadow-lg hover:shadow-xl hover:translate-y-[-2px]"
               >
                 Start a Conversation
               </button>
               <button 
                 onClick={scrollToServices}
-                className="border border-oxford-blue text-oxford-blue px-12 py-4 text-lg font-medium hover:bg-oxford-blue hover:text-white transition-all duration-500 text-center uppercase tracking-wide"
+                className="border-2 border-oxford-blue text-oxford-blue px-14 py-6 text-lg font-medium hover:bg-oxford-blue hover:text-white transition-all duration-500 text-center uppercase tracking-wide hover:translate-y-[-2px]"
               >
                 Our Approach
               </button>

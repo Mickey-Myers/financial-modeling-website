@@ -20,14 +20,14 @@ export default function ServicesSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div 
             ref={card1Ref}
-            className={`elegant-card p-10 fade-in ${card1Visible ? "visible" : ""}`}
+            className={`elegant-card p-8 lg:p-10 fade-in hover:translate-y-[-2px] transition-transform duration-300 ${card1Visible ? "visible" : ""}`}
           >
-            <div className="w-8 h-8 text-bronze mb-8">
-              <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 8h10v2H7v-2zm0-4h10v2H7V9z"/>
+            <div className="w-8 h-8 text-bronze mb-8 stroke-2">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 8h10v2H7v-2zm0-4h10v2H7V9z"/>
               </svg>
             </div>
             <h3 className="text-2xl font-display font-medium text-near-black mb-6 leading-tight">Capital Markets Excellence</h3>
@@ -38,11 +38,11 @@ export default function ServicesSection() {
 
           <div 
             ref={card2Ref}
-            className={`elegant-card p-10 fade-in ${card2Visible ? "visible" : ""}`}
+            className={`elegant-card p-8 lg:p-10 fade-in hover:translate-y-[-2px] transition-transform duration-300 ${card2Visible ? "visible" : ""}`}
           >
-            <div className="w-8 h-8 text-bronze mb-8">
-              <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            <div className="w-8 h-8 text-bronze mb-8 stroke-2">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
             <h3 className="text-2xl font-display font-medium text-near-black mb-6 leading-tight">Due Diligence Precision</h3>
@@ -53,11 +53,11 @@ export default function ServicesSection() {
 
           <div 
             ref={card3Ref}
-            className={`elegant-card p-10 fade-in ${card3Visible ? "visible" : ""}`}
+            className={`elegant-card p-8 lg:p-10 fade-in hover:translate-y-[-2px] transition-transform duration-300 ${card3Visible ? "visible" : ""}`}
           >
-            <div className="w-8 h-8 text-bronze mb-8">
-              <svg fill="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                <path d="M13 3l3.86 3.86H19c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V8.86c0-.53.21-1.04.59-1.41L7.14 4h5.72L13 3zm0 2.5L11.5 7H5.5l-1.5 1.5V19h16V7h-7z"/>
+            <div className="w-8 h-8 text-bronze mb-8 stroke-2">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 7l5 5-5 5"/>
               </svg>
             </div>
             <h3 className="text-2xl font-display font-medium text-near-black mb-6 leading-tight">Complex Restructuring</h3>

@@ -18,54 +18,54 @@ export default function IndustriesSection() {
           <p className="text-xl text-muted-text font-body">Trusted by institutional investors and sophisticated enterprises</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-12">
           <div 
             ref={companiesRef}
-            className={`text-left fade-in ${companiesVisible ? "visible" : ""}`}
+            className={`text-left border-l-2 border-bronze/20 pl-6 fade-in ${companiesVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Portfolio Companies</h3>
-            <ul className="space-y-3 text-muted-text font-body">
-              <li>VC-Backed Enterprises</li>
-              <li>PE Portfolio Companies</li>
-              <li>Public Companies</li>
-              <li>Private Holdings</li>
+            <h3 className="text-xs font-medium text-bronze mb-6 uppercase tracking-wider">Portfolio Companies</h3>
+            <ul className="space-y-4 text-muted-text font-body leading-relaxed">
+              <li>• VC-Backed Enterprises</li>
+              <li>• PE Portfolio Companies</li>
+              <li>• Public Companies</li>
+              <li>• Private Holdings</li>
             </ul>
           </div>
 
           <div 
             ref={investorsRef}
-            className={`text-left fade-in ${investorsVisible ? "visible" : ""}`}
+            className={`text-left border-l-2 border-bronze/20 pl-6 fade-in ${investorsVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Capital Partners</h3>
-            <ul className="space-y-3 text-muted-text font-body">
-              <li>Private Equity Funds</li>
-              <li>Family Offices</li>
-              <li>Credit Funds</li>
+            <h3 className="text-xs font-medium text-bronze mb-6 uppercase tracking-wider">Capital Partners</h3>
+            <ul className="space-y-4 text-muted-text font-body leading-relaxed">
+              <li>• Private Equity Funds</li>
+              <li>• Family Offices</li>
+              <li>• Credit Funds</li>
             </ul>
           </div>
 
           <div 
             ref={developersRef}
-            className={`text-left fade-in ${developersVisible ? "visible" : ""}`}
+            className={`text-left border-l-2 border-bronze/20 pl-6 fade-in ${developersVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Development</h3>
-            <ul className="space-y-3 text-muted-text font-body">
-              <li>Real Estate</li>
-              <li>Infrastructure</li>
-              <li>Energy Projects</li>
+            <h3 className="text-xs font-medium text-bronze mb-6 uppercase tracking-wider">Development</h3>
+            <ul className="space-y-4 text-muted-text font-body leading-relaxed">
+              <li>• Real Estate</li>
+              <li>• Infrastructure</li>
+              <li>• Energy Projects</li>
             </ul>
           </div>
 
           <div 
             ref={industriesRef}
-            className={`text-left fade-in ${industriesVisible ? "visible" : ""}`}
+            className={`text-left border-l-2 border-bronze/20 pl-6 fade-in ${industriesVisible ? "visible" : ""}`}
           >
-            <h3 className="text-lg font-medium text-bronze mb-6 uppercase tracking-wide">Sectors</h3>
-            <ul className="space-y-3 text-muted-text font-body">
-              <li>Healthcare & Life Sciences</li>
-              <li>Technology</li>
-              <li>Consumer & Retail</li>
-              <li>Business Services</li>
+            <h3 className="text-xs font-medium text-bronze mb-6 uppercase tracking-wider">Sectors</h3>
+            <ul className="space-y-4 text-muted-text font-body leading-relaxed">
+              <li>• Healthcare & Life Sciences</li>
+              <li>• Technology</li>
+              <li>• Consumer & Retail</li>
+              <li>• Business Services</li>
             </ul>
           </div>
         </div>
