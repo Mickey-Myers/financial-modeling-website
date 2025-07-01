@@ -59,7 +59,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-oxford-blue via-oxford-blue/95 to-near-black relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-bronze/15 via-transparent to-champagne/10"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(163,134,88,0.2),transparent_80%)]"></div>
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-oxford-blue/50 to-transparent"></div>
