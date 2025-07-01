@@ -93,14 +93,14 @@ export default function ContactSection() {
               )}
             </div>
             <div>
-              <Label htmlFor="company" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="company" className="block text-sm font-medium text-slate-800 dark:text-near-black mb-3 uppercase tracking-wide">
                 Company
               </Label>
               <Input
                 id="company"
                 type="text"
                 {...form.register("company")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border-2 border-gray-300 dark:border-white/20 bg-white dark:bg-background text-slate-900 dark:text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg shadow-sm"
                 disabled={isSubmitting}
               />
             </div>
@@ -108,14 +108,14 @@ export default function ContactSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <Label htmlFor="email" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="email" className="block text-sm font-medium text-slate-800 dark:text-near-black mb-3 uppercase tracking-wide">
                 Email *
               </Label>
               <Input
                 id="email"
                 type="email"
                 {...form.register("email")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border-2 border-gray-300 dark:border-white/20 bg-white dark:bg-background text-slate-900 dark:text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg shadow-sm"
                 disabled={isSubmitting}
               />
               {form.formState.errors.email && (
@@ -123,28 +123,28 @@ export default function ContactSection() {
               )}
             </div>
             <div>
-              <Label htmlFor="phone" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="phone" className="block text-sm font-medium text-slate-800 dark:text-near-black mb-3 uppercase tracking-wide">
                 Phone
               </Label>
               <Input
                 id="phone"
                 type="tel"
                 {...form.register("phone")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border-2 border-gray-300 dark:border-white/20 bg-white dark:bg-background text-slate-900 dark:text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg shadow-sm"
                 disabled={isSubmitting}
               />
             </div>
           </div>
 
           <div className="mb-8">
-            <Label htmlFor="message" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+            <Label htmlFor="message" className="block text-sm font-medium text-slate-800 dark:text-near-black mb-3 uppercase tracking-wide">
               Message
             </Label>
             <Textarea
               id="message"
               rows={5}
               {...form.register("message")}
-              className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+              className="w-full px-4 py-4 border-2 border-gray-300 dark:border-white/20 bg-white dark:bg-background text-slate-900 dark:text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg shadow-sm placeholder:text-slate-500 dark:placeholder:text-gray-400"
               placeholder="Describe your financial modeling requirements..."
               disabled={isSubmitting}
             />

@@ -1,18 +1,34 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    // Initialize theme from localStorage or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = savedTheme ? savedTheme === 'dark' : systemPrefersDark;
+    
+    setIsDark(initialTheme);
+    document.documentElement.classList.toggle('dark', initialTheme);
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    document.documentElement.classList.toggle('dark', newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+  };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -46,6 +62,13 @@ export default function Navigation() {
                 className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
               >
                 Proof
+              </button>
+              <button 
+                onClick={toggleTheme}
+                className="text-muted-text hover:text-oxford-blue p-2 transition-colors mr-2"
+                aria-label="Toggle theme"
+              >
+                {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
               <button 
                 onClick={() => scrollToSection("contact")}
