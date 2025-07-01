@@ -40,12 +40,12 @@ export default function Navigation() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white/95 backdrop-blur-sm border-b border-gray-100" : "bg-white/95 backdrop-blur-sm"
+      isScrolled ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-gray-100 dark:border-slate-700" : "bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-display font-semibold text-oxford-blue tracking-tight">Financial Modeling Partners</h1>
+            <h1 className="text-xl font-display font-semibold text-oxford-blue dark:text-champagne tracking-tight">Financial Modeling Partners</h1>
           </div>
           
           {/* Desktop Navigation */}
@@ -53,19 +53,19 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button 
                 onClick={() => scrollToSection("services")}
-                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
+                className="text-slate-600 dark:text-muted-text hover:text-oxford-blue dark:hover:text-champagne px-3 py-2 text-sm font-medium transition-colors"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection("track-record")}
-                className="text-muted-text hover:text-oxford-blue px-3 py-2 text-sm font-medium transition-colors"
+                className="text-slate-600 dark:text-muted-text hover:text-oxford-blue dark:hover:text-champagne px-3 py-2 text-sm font-medium transition-colors"
               >
                 Proof
               </button>
               <button 
                 onClick={toggleTheme}
-                className="text-muted-text hover:text-oxford-blue p-2 transition-colors mr-2"
+                className="text-slate-600 dark:text-muted-text hover:text-oxford-blue dark:hover:text-champagne p-2 transition-colors mr-2"
                 aria-label="Toggle theme"
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
