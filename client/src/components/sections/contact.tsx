@@ -158,7 +158,7 @@ export default function ContactSection() {
             {isSubmitting ? "Sending..." : "Book a Free Intro Call"}
           </Button>
 
-          <p className="text-sm text-muted-text text-center mt-6 font-body">
+          <p className="text-sm text-champagne text-center mt-6 font-body">
             Confidential consultation. No marketing communications.
           </p>
         </form>
