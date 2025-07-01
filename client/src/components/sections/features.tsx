@@ -39,8 +39,8 @@ export default function FeaturesSection() {
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Why Us</h2>
-          <p className="text-xl text-muted-text font-body max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Why Us</h2>
+          <p className="text-xl text-champagne font-body max-w-3xl mx-auto">
             What makes our financial models different
           </p>
         </div>

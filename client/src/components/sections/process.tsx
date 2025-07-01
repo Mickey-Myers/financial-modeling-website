@@ -7,15 +7,15 @@ export default function ProcessSection() {
   const { ref: step3Ref, isIntersecting: step3Visible } = useIntersectionObserver();
 
   return (
-    <section className="py-24 bg-gradient-to-b from-light-accent via-background to-light-accent relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-bronze/5 via-transparent to-oxford-blue/5"></div>
+    <section className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-bronze/10 via-transparent to-oxford-blue/8"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Process Timeline</h2>
-          <p className="text-xl text-muted-text font-body">Simple, fast, effective</p>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Process Timeline</h2>
+          <p className="text-xl text-champagne font-body">Simple, fast, effective</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
