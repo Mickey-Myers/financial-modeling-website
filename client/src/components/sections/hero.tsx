@@ -18,16 +18,16 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-32 pb-32 bg-gradient-to-br from-ivory via-background to-light-accent overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/5 via-transparent to-bronze/10"></div>
+    <section className="pt-32 pb-32 bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50 dark:from-ivory dark:via-background dark:to-light-accent overflow-hidden relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/8 via-transparent to-bronze/12 dark:from-oxford-blue/5 dark:via-transparent dark:to-bronze/10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[90vh] relative z-10">
           <div 
             ref={ref}
             className={`fade-in ${isIntersecting ? "visible" : ""}`}
           >
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-near-black leading-tight mb-8 tracking-tight">
-              Get a Financial Model <span className="text-bronze italic">That Wins Deals</span>
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-slate-900 dark:text-near-black leading-tight mb-8 tracking-tight">
+              Get a Financial Model <span className="text-bronze italic drop-shadow-sm">That Wins Deals</span>
             </h1>
             <div className="mb-10">
               <p className="text-xl text-muted-text mb-8 leading-relaxed font-body max-w-2xl">

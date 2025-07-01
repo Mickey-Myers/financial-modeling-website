@@ -32,6 +32,14 @@
   --near-black: hsl(216, 19%, 12%);
   --muted-text: hsl(216, 8%, 45%);
   --light-accent: hsl(47, 15%, 95%);
+  
+  /* Light mode section backgrounds */
+  --hero-bg: hsl(47, 20%, 96%);
+  --section-bg: hsl(47, 15%, 97%);
+  --card-bg: hsl(0, 0%, 100%);
+  --testimonial-bg: hsl(47, 20%, 96%);
+  --contact-bg: hsl(216, 69%, 13%);
+  --metrics-bg: hsl(47, 15%, 94%);
 }
 
 .dark {
@@ -55,6 +63,14 @@
   --destructive-foreground: hsl(47, 26%, 98%);
   --ring: hsl(38, 23%, 55%);
   --radius: 0.25rem;
+  
+  /* Dark mode section backgrounds */
+  --hero-bg: hsl(216, 19%, 12%);
+  --section-bg: hsl(216, 19%, 10%);
+  --card-bg: hsl(216, 19%, 15%);
+  --testimonial-bg: hsl(216, 19%, 12%);
+  --contact-bg: hsl(216, 69%, 13%);
+  --metrics-bg: hsl(216, 19%, 11%);
 }
 
 @layer base {
@@ -141,6 +157,30 @@
   
   .bg-light-accent {
     background-color: var(--light-accent);
+  }
+  
+  .bg-hero {
+    background-color: hsl(var(--hero-bg));
+  }
+  
+  .bg-section {
+    background-color: hsl(var(--section-bg));
+  }
+  
+  .bg-card-custom {
+    background-color: hsl(var(--card-bg));
+  }
+  
+  .bg-testimonial {
+    background-color: hsl(var(--testimonial-bg));
+  }
+  
+  .bg-contact {
+    background-color: hsl(var(--contact-bg));
+  }
+  
+  .bg-metrics {
+    background-color: hsl(var(--metrics-bg));
   }
   
   .hover\:bg-oxford-blue:hover {
