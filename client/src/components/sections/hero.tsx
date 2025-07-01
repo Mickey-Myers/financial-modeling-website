@@ -30,7 +30,7 @@ export default function HeroSection() {
               Get a Financial Model <span className="text-bronze italic drop-shadow-sm">That Wins Deals</span>
             </h1>
             <div className="mb-10">
-              <p className="text-xl text-muted-text mb-8 leading-relaxed font-body max-w-2xl">
+              <p className="text-xl text-slate-700 dark:text-muted-text mb-8 leading-relaxed font-body max-w-2xl">
                 Custom-built Excel models for founders, investors, and developers who need clarity, speed, and results.
               </p>
             </div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
               </button>
               <button 
                 onClick={scrollToServices}
-                className="border-2 border-oxford-blue/30 text-oxford-blue px-12 py-5 text-lg font-medium hover:bg-gradient-to-r hover:from-oxford-blue/5 hover:to-oxford-blue/10 transition-all duration-300 text-center shadow-lg hover:shadow-xl backdrop-blur-sm bg-white/80"
+                className="border-2 border-oxford-blue/50 text-oxford-blue px-12 py-5 text-lg font-medium hover:bg-gradient-to-r hover:from-oxford-blue/8 hover:to-oxford-blue/12 transition-all duration-300 text-center shadow-lg hover:shadow-xl backdrop-blur-sm bg-white/90 dark:border-oxford-blue/30 dark:bg-white/80 dark:hover:from-oxford-blue/5 dark:hover:to-oxford-blue/10"
               >
                 Explore Services
               </button>

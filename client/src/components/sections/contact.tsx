@@ -74,18 +74,18 @@ export default function ContactSection() {
 
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="bg-gradient-to-br from-ivory via-background to-ivory/95 p-12 shadow-2xl border border-champagne/30 backdrop-blur-lg"
+          className="bg-gradient-to-br from-white via-slate-50 to-white p-12 shadow-2xl border border-gray-200 dark:from-ivory dark:via-background dark:to-ivory/95 dark:border-champagne/30 backdrop-blur-lg"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <Label htmlFor="fullName" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="fullName" className="block text-sm font-medium text-slate-800 dark:text-near-black mb-3 uppercase tracking-wide">
                 Full Name *
               </Label>
               <Input
                 id="fullName"
                 type="text"
                 {...form.register("fullName")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border-2 border-gray-300 dark:border-white/20 bg-white dark:bg-background text-slate-900 dark:text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg shadow-sm"
                 disabled={isSubmitting}
               />
               {form.formState.errors.fullName && (

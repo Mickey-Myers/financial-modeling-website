@@ -5,9 +5,9 @@ export default function TrackRecordSection() {
   const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section id="track-record" className="py-24 bg-gradient-to-br from-oxford-blue via-oxford-blue/95 to-oxford-blue/90 relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-bronze/10 via-transparent to-bronze/5"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(163,134,88,0.15),transparent_70%)]"></div>
+    <section id="track-record" className="py-24 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 dark:from-oxford-blue dark:via-oxford-blue/95 dark:to-oxford-blue/90 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-bronze/15 via-transparent to-bronze/8 dark:from-bronze/10 dark:via-transparent dark:to-bronze/5"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(163,134,88,0.2),transparent_70%)] dark:bg-[radial-gradient(circle_at_30%_50%,rgba(163,134,88,0.15),transparent_70%)]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={ref}

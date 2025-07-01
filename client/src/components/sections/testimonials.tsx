@@ -32,15 +32,15 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-light-accent via-ivory to-background relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-bronze/8 via-transparent to-oxford-blue/8"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(163,134,88,0.1),transparent_60%)]"></div>
+    <section className="py-24 bg-gradient-to-br from-stone-100 via-slate-50 to-gray-100 dark:from-light-accent dark:via-ivory dark:to-background relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-bronze/12 via-transparent to-oxford-blue/10 dark:from-bronze/8 dark:via-transparent dark:to-oxford-blue/8"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(163,134,88,0.15),transparent_60%)] dark:bg-[radial-gradient(circle_at_70%_30%,rgba(163,134,88,0.1),transparent_60%)]"></div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={ref}
           className={`text-center mb-20 fade-in ${isIntersecting ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">Client Perspectives</h2>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-slate-900 dark:text-near-black mb-6 tracking-tight">Client Perspectives</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
