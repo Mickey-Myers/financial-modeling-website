@@ -9,7 +9,7 @@ import ContactSection from "@/components/sections/contact";
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div className="bg-slate-900">
       <Navigation />
       <HeroSection />
       <ServicesSection />
@@ -20,7 +20,7 @@ export default function Home() {
       <ContactSection />
       
       {/* Footer */}
-      <footer className="bg-near-black text-white py-12">
+      <footer className="bg-slate-800 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-xl font-display font-medium mb-4 tracking-tight">Financial Modeling Partners</h3>
