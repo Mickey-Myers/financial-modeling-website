@@ -8,15 +8,15 @@ export default function ServicesSection() {
   const { ref: card3Ref, isIntersecting: card3Visible } = useIntersectionObserver();
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-b from-background via-light-accent to-background relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-oxford-blue/5 to-transparent"></div>
+    <section id="services" className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-bronze/10 to-transparent"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={titleRef}
           className={`text-center mb-20 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-near-black mb-6 tracking-tight">What We Do</h2>
-          <p className="text-xl text-muted-text max-w-3xl mx-auto leading-relaxed font-body">
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">What We Do</h2>
+          <p className="text-xl text-champagne max-w-3xl mx-auto leading-relaxed font-body">
             Three ways we help you build financial models that get results
           </p>
         </div>

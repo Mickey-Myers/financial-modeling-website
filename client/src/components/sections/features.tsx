@@ -32,8 +32,8 @@ export default function FeaturesSection() {
   const { ref: gridRef, isIntersecting: gridVisible } = useIntersectionObserver();
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background via-light-accent to-ivory relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/3 via-transparent to-bronze/5"></div>
+    <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/8 via-transparent to-bronze/12"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={titleRef}

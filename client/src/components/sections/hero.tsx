@@ -18,19 +18,19 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="pt-32 pb-32 bg-gradient-to-br from-slate-50 via-gray-50 to-stone-50 dark:from-ivory dark:via-background dark:to-light-accent overflow-hidden relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-oxford-blue/8 via-transparent to-bronze/12 dark:from-oxford-blue/5 dark:via-transparent dark:to-bronze/10"></div>
+    <section className="pt-32 pb-32 bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 overflow-hidden relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-bronze/15 via-transparent to-bronze/8"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center min-h-[90vh] relative z-10">
           <div 
             ref={ref}
             className={`fade-in ${isIntersecting ? "visible" : ""}`}
           >
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-slate-900 dark:text-near-black leading-tight mb-8 tracking-tight">
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-display font-semibold text-white leading-tight mb-8 tracking-tight">
               Get a Financial Model <span className="text-bronze italic drop-shadow-sm">That Wins Deals</span>
             </h1>
             <div className="mb-10">
-              <p className="text-xl text-slate-700 dark:text-muted-text mb-8 leading-relaxed font-body max-w-2xl">
+              <p className="text-xl text-champagne mb-8 leading-relaxed font-body max-w-2xl">
                 Custom-built Excel models for founders, investors, and developers who need clarity, speed, and results.
               </p>
             </div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
               </button>
               <button 
                 onClick={scrollToServices}
-                className="border-2 border-oxford-blue/50 text-oxford-blue px-12 py-5 text-lg font-medium hover:bg-gradient-to-r hover:from-oxford-blue/8 hover:to-oxford-blue/12 transition-all duration-300 text-center shadow-lg hover:shadow-xl backdrop-blur-sm bg-white/90 dark:border-oxford-blue/30 dark:bg-white/80 dark:hover:from-oxford-blue/5 dark:hover:to-oxford-blue/10"
+                className="border-2 border-champagne/50 text-champagne px-12 py-5 text-lg font-medium hover:bg-gradient-to-r hover:from-champagne/8 hover:to-champagne/12 transition-all duration-300 text-center shadow-lg hover:shadow-xl backdrop-blur-sm bg-transparent"
               >
                 Explore Services
               </button>
