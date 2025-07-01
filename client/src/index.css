@@ -232,4 +232,16 @@
     font-family: 'Playfair Display', Georgia, serif;
     font-feature-settings: 'lnum';
   }
+  
+  /* Prevent debug outlines */
+  section {
+    outline: none !important;
+    border: none !important;
+  }
+  
+  section:focus,
+  section:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
