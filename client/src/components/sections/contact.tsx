@@ -74,18 +74,18 @@ export default function ContactSection() {
 
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="bg-gradient-to-br from-ivory via-background to-ivory/95 p-12 shadow-2xl border border-champagne/30 backdrop-blur-lg"
+          className="bg-gradient-to-br from-slate-800/90 via-slate-900/95 to-slate-800/90 p-12 shadow-2xl border border-champagne/30 backdrop-blur-lg"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <Label htmlFor="fullName" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="fullName" className="block text-sm font-medium text-white mb-3 uppercase tracking-wide">
                 Full Name *
               </Label>
               <Input
                 id="fullName"
                 type="text"
                 {...form.register("fullName")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-slate-700/50 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
               {form.formState.errors.fullName && (
@@ -93,14 +93,14 @@ export default function ContactSection() {
               )}
             </div>
             <div>
-              <Label htmlFor="company" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="company" className="block text-sm font-medium text-white mb-3 uppercase tracking-wide">
                 Company
               </Label>
               <Input
                 id="company"
                 type="text"
                 {...form.register("company")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-slate-700/50 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
             </div>
@@ -108,14 +108,14 @@ export default function ContactSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <div>
-              <Label htmlFor="email" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="email" className="block text-sm font-medium text-white mb-3 uppercase tracking-wide">
                 Email *
               </Label>
               <Input
                 id="email"
                 type="email"
                 {...form.register("email")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-slate-700/50 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
               {form.formState.errors.email && (
@@ -123,28 +123,28 @@ export default function ContactSection() {
               )}
             </div>
             <div>
-              <Label htmlFor="phone" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+              <Label htmlFor="phone" className="block text-sm font-medium text-white mb-3 uppercase tracking-wide">
                 Phone
               </Label>
               <Input
                 id="phone"
                 type="tel"
                 {...form.register("phone")}
-                className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+                className="w-full px-4 py-4 border border-white/20 bg-slate-700/50 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
                 disabled={isSubmitting}
               />
             </div>
           </div>
 
           <div className="mb-8">
-            <Label htmlFor="message" className="block text-sm font-medium text-near-black mb-3 uppercase tracking-wide">
+            <Label htmlFor="message" className="block text-sm font-medium text-white mb-3 uppercase tracking-wide">
               Message
             </Label>
             <Textarea
               id="message"
               rows={5}
               {...form.register("message")}
-              className="w-full px-4 py-4 border border-white/20 bg-background text-near-black focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
+              className="w-full px-4 py-4 border border-white/20 bg-slate-700/50 text-white placeholder:text-gray-300 focus:ring-2 focus:ring-bronze focus:border-bronze text-lg"
               placeholder="Describe your financial modeling requirements..."
               disabled={isSubmitting}
             />

@@ -26,9 +26,9 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 flex items-center justify-center mx-auto mb-8 shadow-2xl">
               <span className="serif-nums text-2xl font-semibold text-white drop-shadow-md">I</span>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Discovery Call</h3>
-            <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">30 Minutes</p>
-            <p className="text-muted-text font-body leading-relaxed">Understand your goals and scope the project requirements.</p>
+            <h3 className="text-2xl font-display font-medium text-white mb-4 tracking-tight">Discovery Call</h3>
+            <p className="text-bronze mb-3 font-medium uppercase tracking-wide text-sm">30 Minutes</p>
+            <p className="text-champagne font-body leading-relaxed">Understand your goals and scope the project requirements.</p>
           </div>
 
           <div 
@@ -38,9 +38,9 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 flex items-center justify-center mx-auto mb-8 shadow-2xl">
               <span className="serif-nums text-2xl font-semibold text-white drop-shadow-md">II</span>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Model Build</h3>
-            <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">5-7 Days</p>
-            <p className="text-muted-text font-body leading-relaxed">We build, review, and revise your custom Excel model.</p>
+            <h3 className="text-2xl font-display font-medium text-white mb-4 tracking-tight">Model Build</h3>
+            <p className="text-bronze mb-3 font-medium uppercase tracking-wide text-sm">5-7 Days</p>
+            <p className="text-champagne font-body leading-relaxed">We build, review, and revise your custom Excel model.</p>
           </div>
 
           <div 
