@@ -50,9 +50,9 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-gradient-to-br from-oxford-blue to-oxford-blue/80 flex items-center justify-center mx-auto mb-8 shadow-2xl">
               <span className="serif-nums text-2xl font-semibold text-white drop-shadow-md">III</span>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 tracking-tight">Delivery + Support</h3>
-            <p className="text-bronze/80 mb-3 font-medium uppercase tracking-wide text-sm">Ongoing</p>
-            <p className="text-muted-text font-body leading-relaxed">Final file, onboarding, and optional ongoing help.</p>
+            <h3 className="text-2xl font-display font-medium text-white mb-4 tracking-tight">Delivery + Support</h3>
+            <p className="text-bronze mb-3 font-medium uppercase tracking-wide text-sm">Ongoing</p>
+            <p className="text-champagne font-body leading-relaxed">Final file, onboarding, and optional ongoing help.</p>
           </div>
         </div>
       </div>

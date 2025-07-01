@@ -57,8 +57,8 @@ export default function FeaturesSection() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-medium text-near-black mb-2 font-display">{feature.title}</h3>
-                <p className="text-muted-text font-body leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-medium text-white mb-2 font-display">{feature.title}</h3>
+                <p className="text-champagne font-body leading-relaxed">{feature.description}</p>
               </div>
             </div>
           ))}

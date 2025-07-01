@@ -31,8 +31,8 @@ export default function ServicesSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 8h10v2H7v-2zm0-4h10v2H7V9z"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 leading-tight">Project-Based Builds</h3>
-            <p className="text-muted-text leading-relaxed font-body">
+            <h3 className="text-2xl font-display font-medium text-white mb-4 leading-tight">Project-Based Builds</h3>
+            <p className="text-champagne leading-relaxed font-body">
               Fully custom Excel models for fundraising, M&A, or internal planning.
             </p>
           </div>
@@ -46,8 +46,8 @@ export default function ServicesSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 leading-tight">Ongoing Support</h3>
-            <p className="text-muted-text leading-relaxed font-body">
+            <h3 className="text-2xl font-display font-medium text-white mb-4 leading-tight">Ongoing Support</h3>
+            <p className="text-champagne leading-relaxed font-body">
               Retainers for scenario testing, board prep, and rolling updates.
             </p>
           </div>
@@ -61,8 +61,8 @@ export default function ServicesSection() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 7l5 5-5 5"/>
               </svg>
             </div>
-            <h3 className="text-2xl font-display font-medium text-near-black mb-4 leading-tight">Interim Partner</h3>
-            <p className="text-muted-text leading-relaxed font-body">
+            <h3 className="text-2xl font-display font-medium text-white mb-4 leading-tight">Interim Partner</h3>
+            <p className="text-champagne leading-relaxed font-body">
               Embedded modeling & strategy help during transitions (e.g., new CFO).
             </p>
           </div>
