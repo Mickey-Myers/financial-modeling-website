@@ -61,6 +61,14 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        // Institutional theme colors
+        "oxford-blue": "var(--oxford-blue)",
+        "bronze": "var(--bronze)",
+        "champagne": "var(--champagne)",
+        "ivory": "var(--ivory)",
+        "near-black": "var(--near-black)",
+        "muted-text": "var(--muted-text)",
+        "light-accent": "var(--light-accent)",
       },
       keyframes: {
         "accordion-down": {

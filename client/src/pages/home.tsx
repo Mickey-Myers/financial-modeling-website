@@ -3,8 +3,8 @@ import HeroSection from "@/components/sections/hero";
 import ServicesSection from "@/components/sections/services";
 import TrackRecordSection from "@/components/sections/track-record";
 import FeaturesSection from "@/components/sections/features";
-import ProcessSection from "@/components/sections/process";
 import TestimonialsSection from "@/components/sections/testimonials";
+import ProcessSection from "@/components/sections/process";
 import ContactSection from "@/components/sections/contact";
 
 export default function Home() {

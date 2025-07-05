@@ -1,4 +1,4 @@
-import { BarChart3, Search, Zap } from "lucide-react";
+import { FileSpreadsheet, RefreshCw, Zap, Check } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export default function ServicesSection() {
@@ -17,54 +17,90 @@ export default function ServicesSection() {
         >
           <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">What We Do</h2>
           <p className="text-xl text-champagne max-w-3xl mx-auto leading-relaxed font-body">
-            Three ways we help you build financial models that get results
+            Three ways we build financial models for your business
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div 
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div
             ref={card1Ref}
-            className={`elegant-card p-8 lg:p-10 fade-in hover:translate-y-[-2px] transition-transform duration-300 ${card1Visible ? "visible" : ""}`}
+            className={`elegant-card p-8 lg:p-10 fade-in hover:scale-105 transition-all duration-100 ease-out cursor-pointer ${card1Visible ? "visible" : ""}`}
           >
-            <div className="w-8 h-8 text-bronze mb-8 stroke-2">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 8h10v2H7v-2zm0-4h10v2H7V9z"/>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-display font-medium text-white mb-4 leading-tight">Project-Based Builds</h3>
-            <p className="text-champagne leading-relaxed font-body">
-              Fully custom Excel models for fundraising, M&A, or internal planning.
+            <FileSpreadsheet className="w-8 h-8 text-bronze mb-4" />
+            <h3 className="text-2xl font-display font-bold text-white mb-4">
+              Custom Financial Models
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Built-from-scratch Excel models for fundraising, M&A, or business planning. Investor-ready models delivered in 1-2 weeks.
             </p>
+            <div className="space-y-3 text-left">
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">3-statement models (P&L, Balance Sheet, Cash Flow)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">DCF & valuation models</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">Scenario & sensitivity analysis</span>
+              </div>
+            </div>
           </div>
 
-          <div 
+          <div
             ref={card2Ref}
-            className={`elegant-card p-8 lg:p-10 fade-in hover:translate-y-[-2px] transition-transform duration-300 ${card2Visible ? "visible" : ""}`}
+            className={`elegant-card p-8 lg:p-10 fade-in hover:scale-105 transition-all duration-100 ease-out cursor-pointer ${card2Visible ? "visible" : ""}`}
           >
-            <div className="w-8 h-8 text-bronze mb-8 stroke-2">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-display font-medium text-white mb-4 leading-tight">Ongoing Support</h3>
-            <p className="text-champagne leading-relaxed font-body">
-              Retainers for scenario testing, board prep, and rolling updates.
+            <RefreshCw className="w-8 h-8 text-bronze mb-4" />
+            <h3 className="text-2xl font-display font-bold text-white mb-4">
+              Model Updates & Maintenance
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Keep your models current with regular updates, new scenarios, and performance tracking as your business grows.
             </p>
+            <div className="space-y-3 text-left">
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">Monthly model updates</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">New scenario modeling</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">Model optimization & fixes</span>
+              </div>
+            </div>
           </div>
 
-          <div 
+          <div
             ref={card3Ref}
-            className={`elegant-card p-8 lg:p-10 fade-in hover:translate-y-[-2px] transition-transform duration-300 ${card3Visible ? "visible" : ""}`}
+            className={`elegant-card p-8 lg:p-10 fade-in hover:scale-105 transition-all duration-100 ease-out cursor-pointer ${card3Visible ? "visible" : ""}`}
           >
-            <div className="w-8 h-8 text-bronze mb-8 stroke-2">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" className="w-full h-full">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5-5 5M6 7l5 5-5 5"/>
-              </svg>
-            </div>
-            <h3 className="text-2xl font-display font-medium text-white mb-4 leading-tight">Interim Partner</h3>
-            <p className="text-champagne leading-relaxed font-body">
-              Embedded modeling & strategy help during transitions (e.g., new CFO).
+            <Zap className="w-8 h-8 text-bronze mb-4" />
+            <h3 className="text-2xl font-display font-bold text-white mb-4">
+              Rush & Complex Models
+            </h3>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Advanced Excel models for complex deals and tight deadlines. LBO models, consolidations, and same-week delivery when needed.
             </p>
+            <div className="space-y-3 text-left">
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">LBO & acquisition models</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">Multi-entity consolidation</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Check className="w-4 h-4 text-bronze flex-shrink-0" />
+                <span className="text-sm text-gray-400">Rush delivery (3-5 days)</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

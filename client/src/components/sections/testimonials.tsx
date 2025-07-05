@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative">
+    <section id="testimonials" className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-champagne/8 via-transparent to-bronze/12"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(193,179,152,0.15),transparent_60%)]"></div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
