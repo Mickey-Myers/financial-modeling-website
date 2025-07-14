@@ -1,7 +1,8 @@
 {
+  "framework": "vite",
   "buildCommand": "npm run build:frontend",
   "outputDirectory": "dist/public",
-  "framework": null,
+  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/((?!api/).*)",
@@ -12,8 +13,5 @@
     "api/**/*.ts": {
       "runtime": "@vercel/node@20.x"
     }
-  },
-  "env": {
-    "NODE_ENV": "production"
   }
 } 
