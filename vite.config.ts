@@ -29,9 +29,15 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    port: 3000,
     fs: {
-      strict: true,
-      deny: ["**/.*"],
+      strict: false,
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
     },
   },
 });

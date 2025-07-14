@@ -95,14 +95,14 @@ export default function Navigation() {
 
   return (
     <nav className="bg-slate-900/95 backdrop-blur-sm border-b border-slate-800/50 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-14 md:h-16">
           
           {/* Logo/Brand */}
           <div className="flex items-center">
             <button 
               onClick={() => scrollToSection("hero")}
-              className="text-xl font-bold text-white hover:text-[#a3865a] transition-colors duration-200 focus:outline-none"
+              className="text-sm md:text-base lg:text-xl font-bold text-white hover:text-[#a3865a] transition-colors duration-200 focus:outline-none"
               aria-label="Financial Modeling Partners - Go to homepage"
             >
               Financial Modeling <span className="text-[#a3865a]">Partners</span>
@@ -143,10 +143,11 @@ export default function Navigation() {
           <div className="flex items-center">
             <button 
               onClick={() => scrollToSection("contact")}
-              className="bg-[#a3865a] hover:bg-[#8f7249] text-slate-900 font-semibold px-6 py-2.5 rounded-lg transition-colors duration-150 focus:outline-none"
-              aria-label="Get a quote for your financial model"
+              className="bg-[#a3865a] hover:bg-[#8f7249] text-slate-900 font-semibold px-2 py-1.5 md:px-6 md:py-2.5 rounded-lg transition-colors duration-150 focus:outline-none text-xs md:text-base"
+              aria-label="Contact us to get started"
             >
-              Get Quote
+              <span className="hidden md:inline">Get Started</span>
+              <span className="md:hidden">Start</span>
             </button>
           </div>
 
@@ -154,7 +155,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-[#a3865a] transition-colors duration-200 p-2 focus:outline-none"
+              className="text-gray-300 hover:text-[#a3865a] transition-colors duration-200 p-3 focus:outline-none touch-manipulation"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}

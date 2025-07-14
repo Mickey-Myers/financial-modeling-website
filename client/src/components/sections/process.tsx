@@ -215,18 +215,15 @@ export default function ProcessSection() {
           ></div>
         </div>
         
-        {/* Simplified Interactive Grid */}
+        {/* Simplified Interactive Grid - Removed complex overlapping patterns */}
         <div 
-          className="absolute inset-0 opacity-15"
+          className="absolute inset-0 opacity-8"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(163, 134, 90, ${0.2 + mousePosition.x * 0.002}) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(163, 134, 90, ${0.2 + mousePosition.y * 0.002}) 1px, transparent 1px),
-              linear-gradient(rgba(21, 37, 69, ${0.15 + mousePosition.y * 0.001}) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(21, 37, 69, ${0.15 + mousePosition.x * 0.001}) 1px, transparent 1px)
+              linear-gradient(rgba(163, 134, 90, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(163, 134, 90, 0.1) 1px, transparent 1px)
             `,
-            backgroundSize: '120px 120px, 120px 120px, 60px 60px, 60px 60px',
-            transform: `translate3d(${mousePosition.x * 0.01}px, ${mousePosition.y * 0.01}px, 0)`
+            backgroundSize: '200px 200px',
           }}
         ></div>
         
@@ -251,16 +248,16 @@ export default function ProcessSection() {
         </div>
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div 
           ref={titleRef}
-          className={`text-center mb-16 transition-all duration-500 ${
+          className={`text-center mb-12 md:mb-16 transition-all duration-500 ${
             titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">Our Process</h2>
-          <p className="text-lg text-champagne italic">Simple, fast, effective</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-3 md:mb-4">Our Process</h2>
+          <p className="text-base md:text-lg text-champagne italic">Simple, fast, effective</p>
         </div>
 
         {/* Timeline */}
@@ -276,14 +273,14 @@ export default function ProcessSection() {
           {/* 5-column grid */}
           <div 
             ref={timelineRef}
-            className={`grid grid-cols-1 md:grid-cols-5 gap-6 relative z-10 transition-all duration-500 ${
+            className={`grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 relative z-10 transition-all duration-500 ${
               timelineVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
             {steps.map((step, index) => (
               <div key={index} className="text-center relative">
                 <div 
-                  className="w-24 h-3 rounded-sm mx-auto mb-6 shadow-lg bg-bronze"
+                  className="w-16 h-2 md:w-24 md:h-3 rounded-sm mx-auto mb-4 md:mb-6 shadow-lg bg-bronze"
                 >
           </div>
 
@@ -303,8 +300,8 @@ export default function ProcessSection() {
                   </div>
                 )}
                 
-                <h3 className="text-lg font-display font-semibold mb-4 whitespace-nowrap text-bronze">{step.title}</h3>
-                <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-base md:text-lg font-display font-semibold mb-3 md:mb-4 md:whitespace-nowrap text-bronze">{step.title}</h3>
+                <p className="text-gray-300 text-xs md:text-sm leading-relaxed">{step.description}</p>
             </div>
             ))}
           </div>

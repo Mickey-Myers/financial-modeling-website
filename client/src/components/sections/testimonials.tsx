@@ -32,30 +32,30 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-champagne/8 via-transparent to-bronze/12"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(193,179,152,0.15),transparent_60%)]"></div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={ref}
-          className={`text-center mb-20 fade-in ${isIntersecting ? "visible" : ""}`}
+          className={`text-center mb-12 md:mb-20 fade-in ${isIntersecting ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Client Perspectives</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-white mb-4 md:mb-6 tracking-tight">Client Perspectives</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="elegant-card p-10 text-left">
-              <div className="mb-6">
-                <svg className="w-8 h-8 text-bronze opacity-60" fill="currentColor" viewBox="0 0 24 24">
+            <div key={index} className="elegant-card p-6 md:p-10 text-left">
+              <div className="mb-4 md:mb-6">
+                <svg className="w-6 h-6 md:w-8 md:h-8 text-bronze opacity-60" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                 </svg>
               </div>
-              <p className="text-lg text-champagne mb-8 italic leading-relaxed font-body max-w-xl">
+              <p className="text-sm md:text-lg text-champagne mb-6 md:mb-8 italic leading-relaxed font-body max-w-xl">
                 {testimonial.quote}
               </p>
-              <div className="border-t border-white/20 pt-6">
-                <div className="text-sm font-medium text-white uppercase tracking-wide mb-1">
+              <div className="border-t border-white/20 pt-4 md:pt-6">
+                <div className="text-xs md:text-sm font-medium text-white uppercase tracking-wide mb-1">
                   {testimonial.author}
                 </div>
                 <div className="text-xs text-bronze">

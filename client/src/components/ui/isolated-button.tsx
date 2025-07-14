@@ -20,7 +20,7 @@ export default function IsolatedButton({ onClick, children, onButtonPresence }: 
 
   return (
     <div 
-      className="fixed bottom-8 right-8 z-[9999]"
+      className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100]"
       style={{
         isolation: 'isolate',
         contain: 'layout style paint',
@@ -29,7 +29,7 @@ export default function IsolatedButton({ onClick, children, onButtonPresence }: 
     >
       <button 
         onClick={onClick}
-        className="bg-[#a3865a] hover:bg-[#8f7249] text-slate-900 px-6 py-3 text-base font-semibold rounded-lg inline-flex items-center gap-2 shadow-xl"
+        className="bg-[#a3865a] hover:bg-[#8f7249] text-slate-900 px-6 py-3 text-base font-semibold rounded-lg inline-flex items-center gap-2 shadow-xl touch-manipulation"
       >
         {children}
         <ArrowRight className="w-4 h-4" />

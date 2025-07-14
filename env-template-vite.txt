@@ -1,0 +1,17 @@
+# EmailJS Configuration - Vite Environment Variables
+# Replace your current .env.local content with this:
+
+# Your EmailJS Service ID (from Gmail service you connected)
+VITE_EMAILJS_SERVICE_ID=service_nfxtkik
+
+# Your EmailJS Public Key (from Integration tab)
+VITE_EMAILJS_PUBLIC_KEY=eN9kZyYAAPVHbTP7W
+
+# Admin notification template ID
+VITE_EMAILJS_ADMIN_TEMPLATE_ID=template_vxcpu5h
+
+# Client confirmation template ID  
+VITE_EMAILJS_CLIENT_TEMPLATE_ID=template_r7lpjqb
+
+# Your personal Gmail address (where you want to receive notifications)
+VITE_ADMIN_EMAIL=mickey.myers14@gmail.com 

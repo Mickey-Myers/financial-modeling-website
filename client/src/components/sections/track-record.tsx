@@ -78,37 +78,37 @@ export default function TrackRecordSection() {
         ></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 relative z-10">
         <div 
           ref={ref}
-          className={`text-center mb-16 fade-in ${isIntersecting ? "visible" : ""}`}
+          className={`text-center mb-12 md:mb-16 fade-in ${isIntersecting ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 tracking-tight">Credibility & Proof</h2>
-          <p className="text-xl text-champagne font-body">Results that speak for themselves</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-white mb-4 md:mb-6 tracking-tight">Credibility & Proof</h2>
+          <p className="text-base md:text-xl text-champagne font-body">Results that speak for themselves</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="text-center p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg">
-            <div className="text-4xl md:text-5xl font-display font-bold text-white mb-3">150+</div>
-            <div className="text-lg font-display font-semibold text-bronze mb-2">Custom Models Built</div>
-            <div className="text-sm text-gray-400 leading-snug">Built for companies from startup to $100M+ revenue</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto">
+          <div className="text-center p-6 md:p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg">
+            <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-3">150+</div>
+            <div className="text-base md:text-lg font-display font-semibold text-bronze mb-1 md:mb-2">Custom Models Built</div>
+            <div className="text-xs md:text-sm text-gray-400 leading-snug">Built for companies from startup to $100M+ revenue</div>
           </div>
 
-          <div className="text-center p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg">
-            <div className="text-4xl md:text-5xl font-display font-bold text-white mb-3">$500M+</div>
-            <div className="text-lg font-display font-semibold text-bronze mb-2">Capital Raised</div>
-            <div className="text-sm text-gray-400 leading-snug">Raised by companies using our financial models</div>
+          <div className="text-center p-6 md:p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg">
+            <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-3">$500M+</div>
+            <div className="text-base md:text-lg font-display font-semibold text-bronze mb-1 md:mb-2">Capital Raised</div>
+            <div className="text-xs md:text-sm text-gray-400 leading-snug">Raised by companies using our financial models</div>
           </div>
 
-          <div className="text-center p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg">
-            <div className="text-4xl md:text-5xl font-display font-bold text-white mb-3">15+</div>
-            <div className="text-lg font-display font-semibold text-bronze mb-2">Industries Served</div>
-            <div className="text-sm text-gray-400 leading-snug">From technology to real estate to manufacturing</div>
+          <div className="text-center p-6 md:p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg">
+            <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-3">15+</div>
+            <div className="text-base md:text-lg font-display font-semibold text-bronze mb-1 md:mb-2">Industries Served</div>
+            <div className="text-xs md:text-sm text-gray-400 leading-snug">From technology to real estate to manufacturing</div>
           </div>
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes gradient-shift {
           0%, 100% { opacity: 0.2; transform: rotate(0deg) scale(1); }
           50% { opacity: 0.4; transform: rotate(90deg) scale(1.05); }

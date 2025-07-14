@@ -4,6 +4,7 @@ import { apiRequest } from '@/lib/queryClient';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 import { 
   Mail, 
   Phone, 
@@ -14,7 +15,10 @@ import {
   Eye, 
   BarChart3,
   RefreshCw,
-  Download
+  Download,
+  Lock,
+  Shield,
+  AlertCircle
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -41,33 +45,192 @@ interface SubmissionStats {
   recent: ContactSubmission[];
 }
 
+// Token management
+const getAuthToken = () => localStorage.getItem('admin_token');
+const setAuthToken = (token: string) => localStorage.setItem('admin_token', token);
+const removeAuthToken = () => localStorage.removeItem('admin_token');
+
+// Configure API requests to include auth token
+const authenticatedApiRequest = async (method: string, url: string, data?: any) => {
+  const token = getAuthToken();
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+  
+  const config: RequestInit = {
+    method,
+    headers,
+  };
+  
+  if (data && (method === 'POST' || method === 'PUT' || method === 'PATCH')) {
+    config.body = JSON.stringify(data);
+  }
+  
+  const response = await fetch(url, config);
+  
+  if (response.status === 401) {
+    // Token expired or invalid
+    removeAuthToken();
+    window.location.reload();
+    throw new Error('Authentication required');
+  }
+  
+  return response;
+};
+
 export default function AdminPage() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [lockTimeLeft, setLockTimeLeft] = useState(0);
+  const [attemptsLeft, setAttemptsLeft] = useState(3);
   const [selectedSubmission, setSelectedSubmission] = useState<ContactSubmission | null>(null);
   const { toast } = useToast();
   const queryClient = useQueryClient();
+
+  // Check if already authenticated
+  useEffect(() => {
+    const checkAuth = async () => {
+      const token = getAuthToken();
+      if (!token) {
+        setIsAuthenticated(false);
+        return;
+      }
+      
+      try {
+        const response = await authenticatedApiRequest('GET', '/api/admin/session');
+        const data = await response.json();
+        
+        if (data.success && data.isValid) {
+          setIsAuthenticated(true);
+          console.log('✅ Admin session restored');
+        } else {
+          removeAuthToken();
+          setIsAuthenticated(false);
+        }
+      } catch (error) {
+        removeAuthToken();
+        setIsAuthenticated(false);
+      }
+    };
+    
+    checkAuth();
+  }, []);
+
+  // Handle lock countdown
+  useEffect(() => {
+    if (lockTimeLeft > 0) {
+      const timer = setTimeout(() => {
+        setLockTimeLeft(lockTimeLeft - 1);
+        if (lockTimeLeft === 1) {
+          setError('');
+          setAttemptsLeft(3);
+        }
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [lockTimeLeft]);
+
+  const handlePasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (lockTimeLeft > 0) {
+      return;
+    }
+
+    setIsLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setAuthToken(data.token);
+        setIsAuthenticated(true);
+        setPassword('');
+        setError('');
+        console.log('✅ Admin authentication successful');
+        
+        toast({
+          title: "Access Granted",
+          description: "Welcome to the admin dashboard!",
+        });
+      } else {
+        setPassword('');
+        setError(data.error || 'Authentication failed');
+        
+        if (data.lockTimeLeft) {
+          setLockTimeLeft(data.lockTimeLeft);
+        }
+        
+        if (data.attemptsLeft !== undefined) {
+          setAttemptsLeft(data.attemptsLeft);
+        }
+      }
+    } catch (error) {
+      setError('Network error. Please try again.');
+      console.error('❌ Admin login error:', error);
+    }
+
+    setIsLoading(false);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await authenticatedApiRequest('POST', '/api/admin/logout');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+    
+    removeAuthToken();
+    setIsAuthenticated(false);
+    setPassword('');
+    setError('');
+    console.log('🔓 Admin logout successful');
+    
+    toast({
+      title: "Logged Out",
+      description: "You have been logged out of the admin dashboard.",
+    });
+  };
 
   // Fetch all submissions
   const { data: submissionsData, isLoading: submissionsLoading, refetch: refetchSubmissions } = useQuery({
     queryKey: ['contact-submissions'],
     queryFn: async () => {
-      const response = await apiRequest('GET', '/api/contact/submissions');
+      const response = await authenticatedApiRequest('GET', '/api/contact/submissions');
       return response.json();
     },
+    enabled: isAuthenticated,
   });
 
   // Fetch statistics
   const { data: statsData, isLoading: statsLoading, refetch: refetchStats } = useQuery({
     queryKey: ['contact-stats'],
     queryFn: async () => {
-      const response = await apiRequest('GET', '/api/contact/stats');
+      const response = await authenticatedApiRequest('GET', '/api/contact/stats');
       return response.json();
     },
+    enabled: isAuthenticated,
   });
 
   // Delete submission mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await apiRequest('DELETE', `/api/contact/submissions/${id}`);
+      const response = await authenticatedApiRequest('DELETE', `/api/contact/submissions/${id}`);
       return response.json();
     },
     onSuccess: () => {
@@ -88,6 +251,106 @@ export default function AdminPage() {
     },
   });
 
+  // Show password prompt if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center">
+        <div className="absolute inset-0">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700"></div>
+          <div 
+            className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(163, 134, 88, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(163, 134, 88, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '60px 60px',
+            }}
+          ></div>
+        </div>
+
+        <div className="relative z-10 w-full max-w-md px-6">
+          <Card className="bg-slate-800/50 backdrop-blur-sm border-slate-700">
+            <div className="p-8">
+              {/* Header */}
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center mb-4">
+                  <div className="p-3 bg-[#a3865a]/20 rounded-full">
+                    <Shield className="w-8 h-8 text-[#a3865a]" />
+                  </div>
+                </div>
+                <h1 className="text-2xl font-bold text-white mb-2">Admin Access</h1>
+                <p className="text-slate-400">Enter your password to access the dashboard</p>
+              </div>
+
+              {/* Login Form */}
+              <form onSubmit={handlePasswordSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="password" className="block text-sm font-medium text-slate-300 mb-2">
+                    <Lock className="w-4 h-4 inline mr-2" />
+                    Password
+                  </label>
+                  <Input
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter admin password"
+                    disabled={isLoading || lockTimeLeft > 0}
+                    className="bg-slate-700/50 border-slate-600 text-white placeholder-slate-400 focus:border-[#a3865a] focus:ring-[#a3865a]/30"
+                    required
+                  />
+                </div>
+
+                {error && (
+                  <div className="flex items-center gap-2 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                    <AlertCircle className="w-4 h-4 text-red-400" />
+                    <span className="text-red-400 text-sm">{error}</span>
+                  </div>
+                )}
+
+                {lockTimeLeft > 0 && (
+                  <div className="flex items-center gap-2 p-3 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+                    <Lock className="w-4 h-4 text-orange-400" />
+                    <span className="text-orange-400 text-sm">
+                      Access locked for {Math.floor(lockTimeLeft / 60)}:{(lockTimeLeft % 60).toString().padStart(2, '0')}
+                    </span>
+                  </div>
+                )}
+
+                {attemptsLeft < 3 && lockTimeLeft === 0 && (
+                  <div className="text-yellow-400 text-sm text-center">
+                    {attemptsLeft} attempt{attemptsLeft !== 1 ? 's' : ''} remaining
+                  </div>
+                )}
+
+                <Button
+                  type="submit"
+                  disabled={isLoading || lockTimeLeft > 0}
+                  className="w-full bg-[#a3865a] hover:bg-[#8f7249] text-white font-semibold shadow-md disabled:opacity-50"
+                >
+                  {isLoading ? 'Verifying...' : 'Access Dashboard'}
+                </Button>
+              </form>
+
+              {/* Footer */}
+              <div className="mt-8 text-center">
+                <a 
+                  href="/"
+                  className="text-slate-400 hover:text-[#a3865a] transition-colors text-sm"
+                >
+                  ← Back to Website
+                </a>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
+  }
+
+  // Main admin dashboard (existing code continues...)
   const submissions: ContactSubmission[] = submissionsData?.data || [];
   const stats: SubmissionStats = statsData?.data || { total: 0, today: 0, thisWeek: 0, thisMonth: 0, recent: [] };
 
@@ -151,7 +414,7 @@ export default function AdminPage() {
                 }}
                 variant="outline" 
                 size="sm"
-                className="border-slate-600 text-slate-300 hover:bg-slate-700"
+                className="border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white transition-colors"
               >
                 <RefreshCw className="w-4 h-4 mr-2" />
                 Refresh
@@ -160,14 +423,23 @@ export default function AdminPage() {
                 onClick={exportToCSV}
                 variant="outline" 
                 size="sm"
-                className="border-slate-600 text-slate-300 hover:bg-slate-700"
+                className="border-green-500 text-green-400 hover:bg-green-500 hover:text-white transition-colors"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Export CSV
               </Button>
+              <Button 
+                onClick={handleLogout}
+                variant="outline" 
+                size="sm"
+                className="border-red-500 text-red-400 hover:bg-red-500 hover:text-white transition-colors"
+              >
+                <Lock className="w-4 h-4 mr-2" />
+                Logout
+              </Button>
               <a 
                 href="/"
-                className="inline-flex items-center px-4 py-2 bg-[#a3865a] hover:bg-[#8f7249] text-slate-900 font-medium rounded-lg transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-[#a3865a] hover:bg-[#8f7249] text-white font-medium rounded-lg transition-colors shadow-md"
               >
                 Back to Site
               </a>
@@ -240,7 +512,7 @@ export default function AdminPage() {
                       <div
                         key={submission.id}
                         onClick={() => setSelectedSubmission(submission)}
-                        className={`p-4 cursor-pointer hover:bg-slate-700/50 transition-colors ${
+                        className={`p-4 min-h-[60px] cursor-pointer hover:bg-slate-700/50 transition-colors touch-manipulation ${
                           selectedSubmission?.id === submission.id ? 'bg-slate-700/50' : ''
                         }`}
                       >
@@ -249,7 +521,7 @@ export default function AdminPage() {
                             <div className="flex items-center gap-2 mb-1">
                               <h3 className="font-medium text-white">{submission.fullName}</h3>
                               {submission.company && (
-                                <Badge variant="secondary" className="bg-slate-600 text-slate-300">
+                                <Badge variant="secondary" className="bg-blue-600 text-blue-100 border-blue-500">
                                   {submission.company}
                                 </Badge>
                               )}
@@ -268,7 +540,7 @@ export default function AdminPage() {
           </div>
 
           {/* Submission Details */}
-          <div>
+          <div className="lg:col-span-1">
             <Card className="bg-slate-800 border-slate-700">
               <div className="p-6 border-b border-slate-700">
                 <h2 className="text-xl font-semibold text-white">Submission Details</h2>
@@ -377,7 +649,7 @@ export default function AdminPage() {
                       disabled={deleteMutation.isPending}
                       variant="destructive"
                       size="sm"
-                      className="flex-1"
+                      className="flex-1 bg-red-600 hover:bg-red-700 text-white font-medium shadow-md disabled:opacity-50"
                     >
                       <Trash2 className="w-4 h-4 mr-2" />
                       {deleteMutation.isPending ? 'Deleting...' : 'Delete'}

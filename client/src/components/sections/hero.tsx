@@ -280,49 +280,49 @@ export default function HeroSection() {
       
         <div 
           ref={ref}
-        className={`relative z-10 max-w-6xl mx-auto px-6 py-20 transition-all duration-500 ${
+        className={`relative z-10 max-w-6xl mx-auto px-6 md:px-8 py-12 md:py-20 transition-all duration-500 ${
           isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         {/* Headline Block - Centered */}
-        <div className="text-center mb-14">
-          <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6 leading-tight animate-fade-in-up">
+        <div className="text-center mb-8 md:mb-14">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 md:mb-6 leading-tight animate-fade-in-up">
             Financial Models<br />
             <span className="text-bronze bg-gradient-to-r from-bronze via-yellow-400 to-bronze bg-clip-text text-transparent animate-gentle-shimmer">
               That Close Deals
               </span>
             </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up mb-8" style={{animationDelay: '0.2s'}}>
+          <p className="text-base md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed animate-fade-in-up mb-6 md:mb-8" style={{animationDelay: '0.2s'}}>
             Investment-grade Excel models that get funding approved, impress management teams, and <span className="font-bold text-bronze">drive process execution</span>.
           </p>
-          <p className="text-lg md:text-xl text-bronze max-w-5xl mx-auto leading-relaxed animate-fade-in-up italic font-medium" style={{animationDelay: '0.3s'}}>
+          <p className="text-sm md:text-lg lg:text-xl text-bronze max-w-5xl mx-auto leading-relaxed animate-fade-in-up italic font-medium" style={{animationDelay: '0.3s'}}>
             Handbuilt by former Investment Bankers, Private Equity Investors, and Startup Founders.
             </p>
           </div>
 
         {/* Credibility Tiles - Perfect Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
-          <div className="text-center p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl animate-fade-in-up hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg" style={{animationDelay: '0.4s'}}>
-            <div className="text-4xl md:text-5xl font-display font-bold text-white mb-3">150+</div>
-            <div className="text-lg font-display font-semibold text-bronze mb-2">Models Built</div>
-            <div className="text-sm text-gray-400 leading-snug">For startups through $100M+ companies</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 max-w-5xl mx-auto mb-8 md:mb-12">
+          <div className="text-center p-6 md:p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl animate-fade-in-up hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg" style={{animationDelay: '0.4s'}}>
+            <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-3">150+</div>
+            <div className="text-base md:text-lg font-display font-semibold text-bronze mb-1 md:mb-2">Models Built</div>
+            <div className="text-xs md:text-sm text-gray-400 leading-snug">For startups through $100M+ companies</div>
           </div>
 
-          <div className="text-center p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl animate-fade-in-up hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg" style={{animationDelay: '0.6s'}}>
-            <div className="text-4xl md:text-5xl font-display font-bold text-white mb-3">$500M+</div>
-            <div className="text-lg font-display font-semibold text-bronze mb-2">Capital Raised</div>
-            <div className="text-sm text-gray-400 leading-snug">Raised using our financial models</div>
+          <div className="text-center p-6 md:p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl animate-fade-in-up hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg" style={{animationDelay: '0.6s'}}>
+            <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-3">$500M+</div>
+            <div className="text-base md:text-lg font-display font-semibold text-bronze mb-1 md:mb-2">Capital Raised</div>
+            <div className="text-xs md:text-sm text-gray-400 leading-snug">Raised using our financial models</div>
           </div>
 
-          <div className="text-center p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl animate-fade-in-up hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg" style={{animationDelay: '0.8s'}}>
-            <div className="text-4xl md:text-5xl font-display font-bold text-white mb-3">1-2</div>
-            <div className="text-lg font-display font-semibold text-bronze mb-2">Week Delivery</div>
-            <div className="text-sm text-gray-400 leading-snug">Professional models, fast turnaround</div>
+          <div className="text-center p-6 md:p-10 rounded-xl bg-slate-800/60 border border-slate-700/40 backdrop-blur-xl animate-fade-in-up hover:scale-105 transition-all duration-100 ease-out cursor-pointer shadow-lg" style={{animationDelay: '0.8s'}}>
+            <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-2 md:mb-3">1-2</div>
+            <div className="text-base md:text-lg font-display font-semibold text-bronze mb-1 md:mb-2">Week Delivery</div>
+            <div className="text-xs md:text-sm text-gray-400 leading-snug">Professional models, fast turnaround</div>
                 </div>
               </div>
               
         {/* Call to Action Button - REMOVED FROM HERO */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-8 md:mt-12 flex justify-center">
           <div className="text-center text-gray-400">
             {/* Button is now in bottom-right corner */}
           </div>
@@ -342,7 +342,7 @@ export default function HeroSection() {
         Build Your Model Now
       </IsolatedButton>
       
-      <style>{`
+      <style suppressHydrationWarning>{`
         @keyframes gradient-shift {
           0%, 100% { opacity: 0.2; transform: rotate(0deg) scale(1); }
           50% { opacity: 0.4; transform: rotate(90deg) scale(1.05); }

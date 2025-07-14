@@ -1,0 +1,17 @@
+# EmailJS Configuration - Personal Gmail Setup
+# Copy this content to a new file called ".env.local" in your project root
+
+# Your EmailJS Service ID (from Gmail service you connected)
+REACT_APP_EMAILJS_SERVICE_ID=YOUR_SERVICE_ID
+
+# Your EmailJS Public Key (from Integration tab)
+REACT_APP_EMAILJS_PUBLIC_KEY=YOUR_PUBLIC_KEY
+
+# Admin notification template ID
+REACT_APP_EMAILJS_ADMIN_TEMPLATE_ID=YOUR_ADMIN_TEMPLATE_ID
+
+# Client confirmation template ID  
+REACT_APP_EMAILJS_CLIENT_TEMPLATE_ID=YOUR_CLIENT_TEMPLATE_ID
+
+# Your personal Gmail address (where you want to receive notifications)
+REACT_APP_ADMIN_EMAIL=your-email@gmail.com 

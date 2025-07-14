@@ -39,35 +39,35 @@ export default function FeaturesSection() {
   const { ref: driverRef, isIntersecting: driverVisible } = useIntersectionObserver();
 
   return (
-    <section id="features" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">
+    <section id="features" className="py-16 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-bronze/10 to-transparent"></div>
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         <div 
           ref={titleRef}
-          className={`text-center mb-16 fade-in ${titleVisible ? "visible" : ""}`}
+          className={`text-center mb-12 md:mb-16 fade-in ${titleVisible ? "visible" : ""}`}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">Why Us</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 md:mb-6">Why Us</h2>
           <div className="max-w-3xl mx-auto">
-            <p className="text-xl text-bronze font-medium italic">
+            <p className="text-base md:text-xl text-bronze font-medium italic">
               How our financial models help our clients win
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-bronze via-bronze to-bronze/80 mx-auto mt-4 rounded-full"></div>
+            <div className="w-16 md:w-24 h-1 bg-gradient-to-r from-bronze via-bronze to-bronze/80 mx-auto mt-3 md:mt-4 rounded-full"></div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left side - Feature cards */}
         <div 
           ref={gridRef}
-            className={`grid grid-cols-1 md:grid-cols-2 gap-6 fade-in ${gridVisible ? "visible" : ""}`}
+            className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 fade-in ${gridVisible ? "visible" : ""}`}
         >
           {features.map((feature, index) => (
-              <div key={index} className="relative p-6 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/30 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-100">
-                <div className="absolute -top-3 -left-3 w-10 h-10 bg-bronze rounded-full flex items-center justify-center text-slate-900 font-bold text-sm shadow-lg">
+              <div key={index} className="relative p-6 md:p-6 rounded-xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/30 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-100">
+                <div className="absolute -top-1 -left-1 md:-top-3 md:-left-3 w-8 h-8 md:w-10 md:h-10 bg-bronze rounded-full flex items-center justify-center text-slate-900 font-bold text-xs md:text-sm shadow-lg">
                   {feature.number}
                 </div>
-                <h4 className="text-lg font-display font-semibold text-bronze mb-3 mt-3">{feature.title}</h4>
-                <p className="text-gray-300 leading-relaxed text-sm">{feature.description}</p>
+                <h4 className="text-base md:text-lg font-display font-semibold text-bronze mb-2 md:mb-3 mt-2 md:mt-3">{feature.title}</h4>
+                <p className="text-gray-300 leading-relaxed text-xs md:text-sm">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -77,17 +77,17 @@ export default function FeaturesSection() {
             ref={driverRef}
             className={`fade-in ${driverVisible ? "visible" : ""} lg:justify-self-center`}
           >
-            <div className="bg-gradient-to-br from-slate-800/90 to-slate-900/90 p-8 rounded-xl border border-slate-700/30 shadow-xl max-w-lg mx-auto">
-              <h3 className="text-2xl font-display font-semibold text-bronze mb-4 text-center">Driver-based Planning</h3>
-              <p className="text-white mb-6 leading-relaxed">
-                We approach financial models based on measurable drivers, not on vanity assumptions. 
-                Our goal is for you to understand which KPIs will drive your startup's revenue, to make 
-                assumptions based on real-world benchmarks and to bring real-world data as soon as you have it.
+            <div className="bg-gradient-to-br from-slate-800/90 to-slate-900/90 p-6 md:p-8 rounded-xl border border-slate-700/30 shadow-xl max-w-lg mx-auto">
+              <h3 className="text-xl md:text-2xl font-display font-semibold text-bronze mb-3 md:mb-4 text-center">Driver-based Planning</h3>
+              <p className="text-xs md:text-sm text-white mb-4 md:mb-6 leading-relaxed">
+                We approach financial models based on measurable drivers, not vanity assumptions. 
+                Our goal is for you to understand which KPIs will drive your startup's revenue, make 
+                assumptions based on real-world benchmarks and bring real-world data as soon as you have it.
               </p>
               
               {/* Driver flow diagram */}
-              <div className="bg-white/5 p-6 rounded-lg border border-slate-600/30 mb-6">
-                <svg viewBox="0 0 720 300" className="w-full h-auto">
+              <div className="bg-white/5 p-4 md:p-6 rounded-lg border border-slate-600/30 mb-4 md:mb-6">
+                <svg viewBox="0 0 720 300" className="w-full h-48 md:h-auto">
                   {/* Paid Marketing */}
                   <rect x="40" y="60" width="130" height="50" rx="8" fill="none" stroke="#a3865a" strokeWidth="2"/>
                   <text x="105" y="90" textAnchor="middle" fill="#c1b398" fontSize="15" fontFamily="system-ui" fontWeight="500">Paid Marketing</text>
