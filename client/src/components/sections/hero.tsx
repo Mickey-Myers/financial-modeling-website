@@ -1,6 +1,4 @@
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { ArrowRight, CheckCircle, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import IsolatedButton from "@/components/ui/isolated-button";
 import { useState, useEffect } from "react";
 
