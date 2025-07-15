@@ -130,41 +130,65 @@ export default function ContactSection() {
       console.log('Admin Email:', import.meta.env.VITE_ADMIN_EMAIL);
       console.log('All env vars:', import.meta.env);
 
+      let adminEmailSuccess = false;
+      let clientEmailSuccess = false;
+      
+      // Send admin notification email
       try {
         console.log('📧 Attempting to send admin notification email...');
-        
-        // Send admin notification email
         const adminResult = await emailjs.send(
           import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
           import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID || 'YOUR_ADMIN_TEMPLATE_ID',
           adminEmailParams,
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
         );
-        
         console.log('✅ Admin email sent successfully:', adminResult);
-
+        adminEmailSuccess = true;
+      } catch (adminError: any) {
+        console.error('❌ Admin email failed:', adminError);
+        console.error('❌ Admin error details:', {
+          message: adminError?.message,
+          status: adminError?.status,
+          text: adminError?.text
+        });
+      }
+      
+      // Send client confirmation email (independent of admin email)
+      try {
         console.log('📧 Attempting to send client confirmation email...');
+        console.log('🔍 Client email parameters:', clientEmailParams);
+        console.log('🔍 Client template ID:', import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID);
         
-        // Send client confirmation email
         const clientResult = await emailjs.send(
           import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
           import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID || 'YOUR_CLIENT_TEMPLATE_ID',
           clientEmailParams,
           import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
         );
-        
         console.log('✅ Client email sent successfully:', clientResult);
-        console.log('🎉 Both emails sent successfully');
-      } catch (emailError) {
-        console.error('❌ Email sending failed:', emailError);
-        console.error('❌ Error details:', {
-          message: emailError.message,
-          status: emailError.status,
-          text: emailError.text
+        clientEmailSuccess = true;
+      } catch (clientError: any) {
+        console.error('❌ Client email failed:', clientError);
+        console.error('❌ Client error details:', {
+          message: clientError?.message,
+          status: clientError?.status,
+          text: clientError?.text
         });
-        // Continue to save to database even if email fails
-        // But we'll show a warning to the user
+        
+        // Check if it's a template configuration issue
+        if (clientError?.message && clientError.message.includes('template')) {
+          console.error('🔍 This looks like a CLIENT template configuration issue');
+          console.error('🔍 Check your client template:', import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID);
+        }
       }
+      
+      // Log overall email status
+      console.log('📧 Email summary:', {
+        adminEmailSuccess,
+        clientEmailSuccess,
+        adminTemplate: import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID,
+        clientTemplate: import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID
+      });
 
       // Save to database
       const response = await apiRequest("POST", "/api/contact", data);
