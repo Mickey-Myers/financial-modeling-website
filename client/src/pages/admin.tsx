@@ -120,8 +120,9 @@ export default function AdminPage() {
     const checkAuth = async () => {
       const token = getAuthToken();
       addLog(`🔍 Checking auth, token exists: ${!!token}`);
+      
       if (!token) {
-        addLog('❌ No token found, setting authenticated to false');
+        addLog('❌ No token found, staying on login screen');
         setIsAuthenticated(false);
         return;
       }
@@ -150,9 +151,16 @@ export default function AdminPage() {
       }
     };
     
-    // Add a small delay to prevent race conditions
-    const timer = setTimeout(checkAuth, 100);
-    return () => clearTimeout(timer);
+    // Only run session check if we have a token
+    const token = getAuthToken();
+    if (token) {
+      // Add a small delay to prevent race conditions
+      const timer = setTimeout(checkAuth, 100);
+      return () => clearTimeout(timer);
+    } else {
+      // No token, just set to false without running session check
+      setIsAuthenticated(false);
+    }
   }, []);
 
   // Handle lock countdown
