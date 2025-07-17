@@ -1,5 +1,10 @@
 import { type VercelRequest, type VercelResponse } from '@vercel/node';
-import { checkAdminSession } from '../../server/auth';
+import jwt from 'jsonwebtoken';
+
+const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production';
+
+// Rate limiting storage (shared with login)
+const activeSessions = new Set<string>();
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // CORS headers
@@ -18,5 +23,22 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
   }
 
-  return checkAdminSession(req as any, res as any);
+  try {
+    const authHeader = req.headers.authorization;
+    
+    if (!authHeader?.startsWith('Bearer ')) {
+      return res.json({ success: false, isValid: false });
+    }
+    
+    const token = authHeader.substring(7);
+    const decoded = jwt.verify(token, JWT_SECRET) as any;
+    
+    // Check if session is still active
+    const isValid = activeSessions.has(decoded.sessionId);
+    
+    res.json({ success: true, isValid, sessionId: decoded.sessionId });
+    
+  } catch (error) {
+    res.json({ success: true, isValid: false });
+  }
 } 
