@@ -50,6 +50,23 @@ const getAuthToken = () => localStorage.getItem('admin_token');
 const setAuthToken = (token: string) => localStorage.setItem('admin_token', token);
 const removeAuthToken = () => localStorage.removeItem('admin_token');
 
+// Persistent logging
+const addLog = (message: string) => {
+  const logs = JSON.parse(localStorage.getItem('admin_logs') || '[]');
+  logs.push(`${new Date().toISOString()}: ${message}`);
+  if (logs.length > 20) logs.shift(); // Keep last 20 logs
+  localStorage.setItem('admin_logs', JSON.stringify(logs));
+  console.log(message);
+};
+
+const getLogs = () => {
+  return JSON.parse(localStorage.getItem('admin_logs') || '[]');
+};
+
+const clearLogs = () => {
+  localStorage.removeItem('admin_logs');
+};
+
 // Configure API requests to include auth token
 const authenticatedApiRequest = async (method: string, url: string, data?: any, skipReload = false) => {
   const token = getAuthToken();
@@ -95,39 +112,39 @@ export default function AdminPage() {
 
   // Log when authentication state changes
   useEffect(() => {
-    console.log('🔄 Authentication state changed:', isAuthenticated);
+    addLog(`🔄 Authentication state changed: ${isAuthenticated}`);
   }, [isAuthenticated]);
 
   // Check if already authenticated
   useEffect(() => {
     const checkAuth = async () => {
       const token = getAuthToken();
-      console.log('🔍 Checking auth, token exists:', !!token);
+      addLog(`🔍 Checking auth, token exists: ${!!token}`);
       if (!token) {
-        console.log('❌ No token found, setting authenticated to false');
+        addLog('❌ No token found, setting authenticated to false');
         setIsAuthenticated(false);
         return;
       }
       
       try {
-        console.log('🔍 Making session check request...');
+        addLog('🔍 Making session check request...');
         const response = await authenticatedApiRequest('GET', '/api/admin/session', undefined, true);
-        console.log('🔍 Session response status:', response.status);
+        addLog(`🔍 Session response status: ${response.status}`);
         const data = await response.json();
-        console.log('🔍 Session response data:', data);
+        addLog(`🔍 Session response data: ${JSON.stringify(data)}`);
         
         if (data.success && data.isValid) {
-          console.log('✅ Session valid, setting authenticated to true');
+          addLog('✅ Session valid, setting authenticated to true');
           setIsAuthenticated(true);
-          console.log('✅ Admin session restored');
+          addLog('✅ Admin session restored');
         } else {
-          console.log('❌ Session invalid, removing token and setting authenticated to false');
+          addLog('❌ Session invalid, removing token and setting authenticated to false');
           removeAuthToken();
           setIsAuthenticated(false);
         }
       } catch (error) {
-        console.error('❌ Session check error:', error);
-        console.log('❌ Session check failed, removing token and setting authenticated to false');
+        addLog(`❌ Session check error: ${error}`);
+        addLog('❌ Session check failed, removing token and setting authenticated to false');
         removeAuthToken();
         setIsAuthenticated(false);
       }
@@ -163,7 +180,7 @@ export default function AdminPage() {
     setError('');
 
     try {
-      console.log('🔐 Starting login process...');
+      addLog('🔐 Starting login process...');
       const response = await fetch('/api/admin/login', {
         method: 'POST',
         headers: {
@@ -173,15 +190,15 @@ export default function AdminPage() {
       });
 
       const data = await response.json();
-      console.log('🔐 Login response:', data);
+      addLog(`🔐 Login response: ${JSON.stringify(data)}`);
 
       if (data.success) {
-        console.log('🔐 Login successful, setting token...');
+        addLog('🔐 Login successful, setting token...');
         setAuthToken(data.token);
         setIsAuthenticated(true);
         setPassword('');
         setError('');
-        console.log('✅ Admin authentication successful');
+        addLog('✅ Admin authentication successful');
         
         toast({
           title: "Access Granted",
@@ -201,7 +218,7 @@ export default function AdminPage() {
       }
     } catch (error) {
       setError('Network error. Please try again.');
-      console.error('❌ Admin login error:', error);
+      addLog(`❌ Admin login error: ${error}`);
     }
 
     setIsLoading(false);
@@ -211,14 +228,14 @@ export default function AdminPage() {
     try {
       await authenticatedApiRequest('POST', '/api/admin/logout');
     } catch (error) {
-      console.error('Logout error:', error);
+      addLog(`Logout error: ${error}`);
     }
     
     removeAuthToken();
     setIsAuthenticated(false);
     setPassword('');
     setError('');
-    console.log('🔓 Admin logout successful');
+    addLog('🔓 Admin logout successful');
     
     toast({
       title: "Logged Out",
@@ -230,7 +247,7 @@ export default function AdminPage() {
   const { data: submissionsData, isLoading: submissionsLoading, refetch: refetchSubmissions } = useQuery({
     queryKey: ['contact-submissions'],
     queryFn: async () => {
-      console.log('🔍 Fetching submissions...');
+      addLog('🔍 Fetching submissions...');
       const response = await authenticatedApiRequest('GET', '/api/contact/submissions');
       return response.json();
     },
@@ -241,7 +258,7 @@ export default function AdminPage() {
   const { data: statsData, isLoading: statsLoading, refetch: refetchStats } = useQuery({
     queryKey: ['contact-stats'],
     queryFn: async () => {
-      console.log('🔍 Fetching stats...');
+      addLog('🔍 Fetching stats...');
       const response = await authenticatedApiRequest('GET', '/api/contact/stats');
       return response.json();
     },
@@ -354,6 +371,24 @@ export default function AdminPage() {
                   {isLoading ? 'Verifying...' : 'Access Dashboard'}
                 </Button>
               </form>
+
+              {/* Debug Panel */}
+              <div className="mt-6 p-4 bg-slate-800/50 rounded-lg border border-slate-600">
+                <h3 className="text-sm font-medium text-slate-300 mb-2">Debug Logs</h3>
+                <div className="text-xs text-slate-400 max-h-32 overflow-y-auto">
+                  {getLogs().map((log: string, index: number) => (
+                    <div key={index} className="mb-1">{log}</div>
+                  ))}
+                </div>
+                <Button
+                  onClick={clearLogs}
+                  size="sm"
+                  variant="outline"
+                  className="mt-2 text-xs"
+                >
+                  Clear Logs
+                </Button>
+              </div>
 
               {/* Footer */}
               <div className="mt-8 text-center">
