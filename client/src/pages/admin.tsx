@@ -93,12 +93,18 @@ export default function AdminPage() {
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
+  // Log when authentication state changes
+  useEffect(() => {
+    console.log('🔄 Authentication state changed:', isAuthenticated);
+  }, [isAuthenticated]);
+
   // Check if already authenticated
   useEffect(() => {
     const checkAuth = async () => {
       const token = getAuthToken();
       console.log('🔍 Checking auth, token exists:', !!token);
       if (!token) {
+        console.log('❌ No token found, setting authenticated to false');
         setIsAuthenticated(false);
         return;
       }
@@ -111,15 +117,17 @@ export default function AdminPage() {
         console.log('🔍 Session response data:', data);
         
         if (data.success && data.isValid) {
+          console.log('✅ Session valid, setting authenticated to true');
           setIsAuthenticated(true);
           console.log('✅ Admin session restored');
         } else {
-          console.log('❌ Session invalid, removing token');
+          console.log('❌ Session invalid, removing token and setting authenticated to false');
           removeAuthToken();
           setIsAuthenticated(false);
         }
       } catch (error) {
         console.error('❌ Session check error:', error);
+        console.log('❌ Session check failed, removing token and setting authenticated to false');
         removeAuthToken();
         setIsAuthenticated(false);
       }
@@ -155,6 +163,7 @@ export default function AdminPage() {
     setError('');
 
     try {
+      console.log('🔐 Starting login process...');
       const response = await fetch('/api/admin/login', {
         method: 'POST',
         headers: {
@@ -164,8 +173,10 @@ export default function AdminPage() {
       });
 
       const data = await response.json();
+      console.log('🔐 Login response:', data);
 
       if (data.success) {
+        console.log('🔐 Login successful, setting token...');
         setAuthToken(data.token);
         setIsAuthenticated(true);
         setPassword('');
@@ -219,6 +230,7 @@ export default function AdminPage() {
   const { data: submissionsData, isLoading: submissionsLoading, refetch: refetchSubmissions } = useQuery({
     queryKey: ['contact-submissions'],
     queryFn: async () => {
+      console.log('🔍 Fetching submissions...');
       const response = await authenticatedApiRequest('GET', '/api/contact/submissions');
       return response.json();
     },
@@ -229,6 +241,7 @@ export default function AdminPage() {
   const { data: statsData, isLoading: statsLoading, refetch: refetchStats } = useQuery({
     queryKey: ['contact-stats'],
     queryFn: async () => {
+      console.log('🔍 Fetching stats...');
       const response = await authenticatedApiRequest('GET', '/api/contact/stats');
       return response.json();
     },
