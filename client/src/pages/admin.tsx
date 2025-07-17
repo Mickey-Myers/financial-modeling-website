@@ -256,8 +256,16 @@ export default function AdminPage() {
     queryKey: ['contact-submissions'],
     queryFn: async () => {
       addLog('🔍 Fetching submissions...');
-      const response = await authenticatedApiRequest('GET', '/api/contact/submissions');
-      return response.json();
+      try {
+        const response = await authenticatedApiRequest('GET', '/api/contact/submissions', undefined, true);
+        addLog(`🔍 Submissions response status: ${response.status}`);
+        const data = await response.json();
+        addLog(`🔍 Submissions response data: ${JSON.stringify(data)}`);
+        return data;
+      } catch (error) {
+        addLog(`❌ Submissions fetch error: ${error}`);
+        throw error;
+      }
     },
     enabled: isAuthenticated,
   });
@@ -267,8 +275,16 @@ export default function AdminPage() {
     queryKey: ['contact-stats'],
     queryFn: async () => {
       addLog('🔍 Fetching stats...');
-      const response = await authenticatedApiRequest('GET', '/api/contact/stats');
-      return response.json();
+      try {
+        const response = await authenticatedApiRequest('GET', '/api/contact/stats', undefined, true);
+        addLog(`🔍 Stats response status: ${response.status}`);
+        const data = await response.json();
+        addLog(`🔍 Stats response data: ${JSON.stringify(data)}`);
+        return data;
+      } catch (error) {
+        addLog(`❌ Stats fetch error: ${error}`);
+        throw error;
+      }
     },
     enabled: isAuthenticated,
   });
@@ -276,7 +292,7 @@ export default function AdminPage() {
   // Delete submission mutation
   const deleteMutation = useMutation({
     mutationFn: async (id: number) => {
-      const response = await authenticatedApiRequest('DELETE', `/api/contact/submissions/${id}`);
+      const response = await authenticatedApiRequest('DELETE', `/api/contact/submissions/${id}`, undefined, true);
       return response.json();
     },
     onSuccess: () => {
