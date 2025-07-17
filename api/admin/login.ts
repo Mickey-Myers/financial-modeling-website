@@ -8,7 +8,6 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-i
 
 // Rate limiting storage
 const failedAttempts = new Map<string, { count: number; lastAttempt: number }>();
-const activeSessions = new Set<string>();
 
 // Helper functions
 const getClientIP = (req: any) => {
@@ -116,9 +115,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
     
-    // Generate session
+    // Generate session ID
     const sessionId = generateSessionId();
-    activeSessions.add(sessionId);
     
     // Generate JWT token
     const token = jwt.sign(
