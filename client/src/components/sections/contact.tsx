@@ -190,9 +190,34 @@ export default function ContactSection() {
         clientTemplate: import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID
       });
 
-      // Save to database
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
+      // Try to save to database, but dont fail the entire submission if it fails
+      let databaseSuccess = false;
+      try {
+        console.log('🗄️ Attempting to save to database...');
+        const response = await apiRequest("POST", "/api/contact", data);
+        const result = await response.json();
+        console.log('✅ Database save successful:', result);
+        databaseSuccess = true;
+        return result;
+      } catch (dbError: any) {
+        console.error('❌ Database save failed:', dbError);
+        console.log('⚠️ Continuing with email success only');
+        
+        // Return a success response even if database fails, as long as emails worked
+        if (adminEmailSuccess || clientEmailSuccess) {
+          console.log('✅ Returning success (emails worked, database failed)');
+          return {
+            success: true,
+            message: "Contact form submitted successfully (emails sent, database backup failed)",
+            emailSuccess: true,
+            databaseSuccess: false
+          };
+        } else {
+          // If no emails worked, then its a real failure
+          console.error('❌ Both emails and database failed - this is a real error');
+          throw new Error("Both email and database operations failed");
+        }
+      }
     },
     onSuccess: (result: any) => {
       setIsSuccess(true);
