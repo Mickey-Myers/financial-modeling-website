@@ -1,6 +1,6 @@
 import { type VercelRequest, type VercelResponse } from '@vercel/node';
-import { createStorage } from '../../../server/storage';
-import { requireAdminAuth } from '../../../server/auth';
+import { createStorage } from '../../../server/storage.js';
+import { requireAdminAuth } from '../../../server/auth.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // CORS headers

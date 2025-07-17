@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { drizzle } from 'drizzle-orm/neon-http';
 import { neon } from '@neondatabase/serverless';
-import { contactSubmissions } from '@shared/schema';
+import { contactSubmissions } from '../shared/schema.js';
 
 // Load environment variables first
 dotenv.config();

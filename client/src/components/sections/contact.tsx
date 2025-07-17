@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { insertContactSubmissionSchema } from "@shared/schema";
+import { insertContactSubmissionSchema } from "../../../../shared/schema.js";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";

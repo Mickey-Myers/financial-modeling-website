@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer } from "http";
 import type { IStorage } from "./storage";
-import { insertContactSubmissionSchema } from "@shared/schema";
+import { insertContactSubmissionSchema } from "../shared/schema.js";
 import { z } from "zod";
 import { adminLogin, adminLogout, requireAdminAuth, checkAdminSession } from "./auth";
 

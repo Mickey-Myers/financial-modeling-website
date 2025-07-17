@@ -1,5 +1,5 @@
-import { contactSubmissions, type ContactSubmission, type InsertContactSubmission } from "@shared/schema";
-import { db, testDatabaseConnection } from "./db";
+import { contactSubmissions, type ContactSubmission, type InsertContactSubmission } from "../shared/schema.js";
+import { db, testDatabaseConnection } from "./db.js";
 import { desc, gte, count, eq } from "drizzle-orm";
 
 export interface IStorage {
