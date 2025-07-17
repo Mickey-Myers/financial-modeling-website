@@ -209,9 +209,10 @@ export function requireAdminAuth(req: Request, res: Response, next: NextFunction
     const token = authHeader.substring(7);
     const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
     
-    // Check if session is still active
-    if (!activeSessions.has(decoded.sessionId)) {
-      return res.status(401).json({ success: false, error: 'Session expired' });
+    // Just check if the token is valid and the user is admin
+    // Don't check session store since each serverless function has its own memory
+    if (decoded.isAdmin !== true) {
+      return res.status(401).json({ success: false, error: 'Invalid token' });
     }
     
     // Add admin info to request
