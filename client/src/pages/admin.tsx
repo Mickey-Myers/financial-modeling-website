@@ -51,7 +51,7 @@ const setAuthToken = (token: string) => localStorage.setItem('admin_token', toke
 const removeAuthToken = () => localStorage.removeItem('admin_token');
 
 // Configure API requests to include auth token
-const authenticatedApiRequest = async (method: string, url: string, data?: any) => {
+const authenticatedApiRequest = async (method: string, url: string, data?: any, skipReload = false) => {
   const token = getAuthToken();
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ const authenticatedApiRequest = async (method: string, url: string, data?: any) 
   
   const response = await fetch(url, config);
   
-  if (response.status === 401) {
+  if (response.status === 401 && !skipReload) {
     // Token expired or invalid
     removeAuthToken();
     window.location.reload();
@@ -105,7 +105,7 @@ export default function AdminPage() {
       
       try {
         console.log('🔍 Making session check request...');
-        const response = await authenticatedApiRequest('GET', '/api/admin/session');
+        const response = await authenticatedApiRequest('GET', '/api/admin/session', undefined, true);
         console.log('🔍 Session response status:', response.status);
         const data = await response.json();
         console.log('🔍 Session response data:', data);
@@ -125,7 +125,9 @@ export default function AdminPage() {
       }
     };
     
-    checkAuth();
+    // Add a small delay to prevent race conditions
+    const timer = setTimeout(checkAuth, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   // Handle lock countdown

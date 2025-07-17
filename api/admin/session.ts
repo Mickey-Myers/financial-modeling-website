@@ -3,14 +3,6 @@ import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'your-super-secret-jwt-key-change-in-production';
 
-// Interface for JWT payload
-interface JWTPayload {
-  isAdmin: boolean;
-  sessionId: string;
-  iat?: number;
-  exp?: number;
-}
-
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -41,16 +33,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const token = authHeader.substring(7);
     console.log('🔍 Token length:', token.length);
     
-    const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
-    console.log('🔍 Token decoded successfully:', { isAdmin: decoded.isAdmin, sessionId: decoded.sessionId });
+    // Just verify the token is valid - if it throws an error, it's invalid
+    const decoded = jwt.verify(token, JWT_SECRET);
+    console.log('🔍 Token is valid:', decoded);
     
-    // Just check if the token is valid and not expired
-    // The JWT library will throw an error if the token is invalid or expired
-    const isValid = decoded.isAdmin === true;
-    
-    console.log(`🔍 Session check - SessionId: ${decoded.sessionId}, Valid: ${isValid}`);
-    
-    const response = { success: true, isValid, sessionId: decoded.sessionId };
+    // If we get here, the token is valid
+    const response = { success: true, isValid: true };
     console.log('🔍 Sending response:', response);
     
     res.json(response);
