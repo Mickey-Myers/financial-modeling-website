@@ -20,6 +20,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    console.log('🔍 Submissions API called');
+    
     // Check admin authentication
     const authResult = await new Promise((resolve, reject) => {
       requireAdminAuth(req as any, res as any, (error: any) => {
@@ -29,11 +31,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     if (!authResult) {
+      console.log('❌ Auth failed in submissions API');
       return; // Auth middleware already sent response
     }
 
+    console.log('✅ Auth passed, creating storage...');
     const storage = await createStorage();
+    console.log('✅ Storage created, fetching submissions...');
     const submissions = await storage.getAllContactSubmissions();
+    console.log(`✅ Found ${submissions.length} submissions`);
     
     res.json({ 
       success: true, 
