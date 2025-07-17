@@ -97,23 +97,29 @@ export default function AdminPage() {
   useEffect(() => {
     const checkAuth = async () => {
       const token = getAuthToken();
+      console.log('🔍 Checking auth, token exists:', !!token);
       if (!token) {
         setIsAuthenticated(false);
         return;
       }
       
       try {
+        console.log('🔍 Making session check request...');
         const response = await authenticatedApiRequest('GET', '/api/admin/session');
+        console.log('🔍 Session response status:', response.status);
         const data = await response.json();
+        console.log('🔍 Session response data:', data);
         
         if (data.success && data.isValid) {
           setIsAuthenticated(true);
           console.log('✅ Admin session restored');
         } else {
+          console.log('❌ Session invalid, removing token');
           removeAuthToken();
           setIsAuthenticated(false);
         }
       } catch (error) {
+        console.error('❌ Session check error:', error);
         removeAuthToken();
         setIsAuthenticated(false);
       }

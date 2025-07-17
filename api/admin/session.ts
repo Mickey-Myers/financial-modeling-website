@@ -29,14 +29,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    console.log('🔍 Session check request received');
     const authHeader = req.headers.authorization;
+    console.log('🔍 Auth header:', authHeader ? 'Present' : 'Missing');
     
     if (!authHeader?.startsWith('Bearer ')) {
+      console.log('❌ No valid auth header found');
       return res.json({ success: false, isValid: false });
     }
     
     const token = authHeader.substring(7);
+    console.log('🔍 Token length:', token.length);
+    
     const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
+    console.log('🔍 Token decoded successfully:', { isAdmin: decoded.isAdmin, sessionId: decoded.sessionId });
     
     // Just check if the token is valid and not expired
     // The JWT library will throw an error if the token is invalid or expired
@@ -44,7 +50,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     
     console.log(`🔍 Session check - SessionId: ${decoded.sessionId}, Valid: ${isValid}`);
     
-    res.json({ success: true, isValid, sessionId: decoded.sessionId });
+    const response = { success: true, isValid, sessionId: decoded.sessionId };
+    console.log('🔍 Sending response:', response);
+    
+    res.json(response);
     
   } catch (error) {
     console.error('❌ Session validation error:', error);
