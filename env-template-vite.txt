@@ -14,4 +14,4 @@ VITE_EMAILJS_ADMIN_TEMPLATE_ID=template_vxcpu5h
 VITE_EMAILJS_CLIENT_TEMPLATE_ID=template_r7lpjqb
 
 # Your personal Gmail address (where you want to receive notifications)
-VITE_ADMIN_EMAIL=mickey.myers14@gmail.com 
+VITE_ADMIN_EMAIL=info@financialmodelingpartners.com 

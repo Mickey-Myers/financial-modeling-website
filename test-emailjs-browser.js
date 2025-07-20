@@ -16,7 +16,7 @@ const testEmailJSInBrowser = async () => {
     publicKey: 'eN9kZyYAAPVHbTP7W',
     adminTemplateId: 'template_vxcpu5h',
     clientTemplateId: 'template_r7lpjqb',
-    adminEmail: 'mickey.myers14@gmail.com'
+    adminEmail: 'info@financialmodelingpartners.com'
   };
   
   console.log('📋 Configuration:', config);

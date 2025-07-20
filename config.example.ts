@@ -25,7 +25,7 @@ export const config = {
   // API Configuration
   api: {
     baseUrl: process.env.NODE_ENV === 'production' 
-      ? 'https://your-domain.com' 
+      ? 'https://financialmodelingpartners.com' 
       : 'http://localhost:3000'
   },
 

@@ -107,14 +107,15 @@ export default function ContactSection() {
         revenue_model: data.revenueModel || 'Not provided',
         message: data.message || 'No additional details provided',
         timestamp: timestamp,
-                 to_email: import.meta.env.VITE_ADMIN_EMAIL || 'info@financialmodelingpartners.com'
+        company_for_response: data.company && data.company.trim() ? ` for ${data.company}` : '',
+        to_email: import.meta.env.VITE_ADMIN_EMAIL || 'info@financialmodelingpartners.com'
       };
 
       // Email parameters for client auto-responder
       const clientEmailParams = {
         to_name: data.fullName,
         to_email: data.email,
-        company: data.company || 'your business',
+        company: data.company && data.company.trim() ? ` for ${data.company}` : '',
         model_type_display: formatModelType(data.modelType || ''),
         industry_display: data.industry || 'Not specified',
         business_stage_display: formatBusinessStage(data.businessStage || ''),
@@ -458,7 +459,7 @@ export default function ContactSection() {
                     required
                     disabled={isSubmitting}
                     className="w-full h-12 px-4 py-4 bg-slate-800/50 border border-slate-700/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#a3865a]/50 focus:ring-1 focus:ring-[#a3865a]/30 transition-all duration-200 touch-manipulation md:h-10 md:py-2"
-                    placeholder="john@acmecorp.com"
+                    placeholder="your-email@company.com"
                   />
                 {form.formState.errors.email && (
                   <p className="text-red-400 text-sm mt-2">{form.formState.errors.email.message}</p>
